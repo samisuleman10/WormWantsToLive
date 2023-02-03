@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="GameObjectRoot" style="padding-top: 4px; margin-left: 8px; margin-top: 4px;">
+            <ui:Label text="Non-Sync GameObject selected." display-tooltip-when-elided="true" name="LabelHeader1" class="HeadLabel" style="font-size: 11px; margin-bottom: 2px; margin-top: 2px;" />
+            <ui:Label text="To convert a GameObject to a Sync, " display-tooltip-when-elided="true" name="LabelHeader2" class="HeadLabel" style="font-size: 11px; margin-bottom: 2px; margin-top: 2px;" />
+            <ui:Label text="drag it directly from Assets into DesignArea." display-tooltip-when-elided="true" name="LabelHeader3" class="HeadLabel" style="font-size: 11px; margin-bottom: 2px; margin-top: 2px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

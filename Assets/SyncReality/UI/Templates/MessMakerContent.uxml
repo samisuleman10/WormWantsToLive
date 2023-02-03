@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root" style="margin-left: 3px;">
+        <ui:VisualElement name="MessMakerRoot" style="padding-top: 4px;">
+            <ui:VisualElement style="flex-direction: row; margin-bottom: 4px;">
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/scatter1.png?fileID=2800000&amp;guid=1f614ec11c0d15a498692837014c5437&amp;type=3#scatter1&apos;); width: 28px; height: 28px;" />
+                <ui:Label text="MessMaker" display-tooltip-when-elided="true" name="HeaderLabel" class="HeadLabel" style="padding-left: 1px; margin-top: 4px; margin-left: 3px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" style="flex-direction: row;">
+                <ui:VisualElement name="ListSection" style="width: 35%;">
+                    <ui:Button text="Create MessModule" display-tooltip-when-elided="true" name="AddModuleButton" tooltip="Create a new MessModule that can be anchored to SyncSetups" style="width: 90%;" />
+                    <ui:VisualElement name="ListContainer" style="width: 95%; height: 95%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="EditSection" style="width: 73%; margin-top: -25px;">
+                    <ui:VisualElement name="ButtonHolder" style="flex-direction: row;">
+                        <ui:Button text="Anchor to Scene" display-tooltip-when-elided="true" name="ButtonSceneAnchor" tooltip="Anchors MessModule to SyncSetup to make it appear" style="margin-bottom: 4px; width: 120px;" />
+                        <ui:Button text="Delete Module" display-tooltip-when-elided="true" name="ButtonDelete" tooltip="Delete the MessModule and all its anchors" style="margin-bottom: 4px; width: 120px;" />
+                    </ui:VisualElement>
+                    <ui:TextField picking-mode="Ignore" label="Module ID" name="NameField" tooltip="Change the MessModule identifier" />
+                    <uie:ObjectField label="Prefab" name="ObjectField" tooltip="Choose the prefab to spawn" />
+                    <uie:EnumField label="Surface" value="Center" name="SurfaceField" tooltip="Select the type of surface it appears on. &lt;only FLOOR and CEILING implemented atm&gt;" />
+                    <uie:IntegerField label="Density" value="42" name="AmountField" tooltip="Set the amount of objects to spawn: higher for smaller rooms" />
+                    <uie:Vector3Field label="Scale Variance" name="ScaleVariance" tooltip="Set the extents of scaling randomness" />
+                    <uie:FloatField label="RotationVariance" value="42.2" name="RotationVariance" tooltip="Set the extent of rotation randomness" />
+                    <uie:FloatField label="ShiftAmount" value="42.2" name="ShiftAmount" tooltip="Set the surface shift" />
+                    <uie:FloatField label="ShiftVariance" value="42.2" name="ShiftVariance" tooltip="Set the surface shift randomness" />
+                    <uie:FloatField label="GravityStrength" value="42.2" name="GravityStrength" tooltip="Set the gravity strength" style="display: none;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

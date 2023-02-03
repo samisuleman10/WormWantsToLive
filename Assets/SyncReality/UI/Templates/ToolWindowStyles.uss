@@ -1,0 +1,16 @@
+.ControlButton {
+    min-width: 140px;
+}
+
+.HeadLabel {
+    margin-top: 6px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    margin-bottom: 6px;
+}
+
+.floatcombo {
+    margin-left: 4px;
+    flex-direction: row;
+    margin-right: 9px;
+}

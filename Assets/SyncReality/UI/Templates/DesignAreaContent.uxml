@@ -1,0 +1,107 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="DesignRoot" style="padding-top: 4px;">
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:VisualElement style="width: 50%;">
+                    <ui:VisualElement name="HeaderCombo" style="flex-direction: row;">
+                        <ui:VisualElement name="Icon" tooltip="Click to delete this Sync" style="background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/SyncSetup.png?fileID=2800000&amp;guid=7cdc794108693f6479c1ce49658dd24e&amp;type=3#SyncSetup&apos;); width: 20px; height: 20px; margin-top: 3px; margin-left: 3px; margin-right: 2px;" />
+                        <ui:Label text="Selected: " display-tooltip-when-elided="true" name="HeadLabel" tooltip="Name of selected Sync" class="HeadLabel" style="margin-left: 2px; font-size: 14px; margin-top: 4px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ListSection" style="width: auto; margin-left: 3px; height: auto; flex-grow: 1;">
+                        <ui:Label text="Elements" display-tooltip-when-elided="true" style="font-size: 13px; -unity-font-style: bold; margin-bottom: 4px; display: none;" />
+                        <ui:VisualElement name="Toggles" style="flex-direction: row; flex-grow: 0; height: auto;">
+                            <ui:VisualElement name="ToggleCombo" style="flex-direction: row; margin-right: 3px;">
+                                <ui:Label text="Sync" display-tooltip-when-elided="true" tooltip="Include Syncs" style="margin-right: -1px; font-size: 12px;" />
+                                <ui:Toggle name="ToggleSC" value="true" tooltip="Include Syncs" style="margin-top: 3px; margin-left: 1px; margin-right: 1px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="ToggleCombo" style="flex-direction: row; margin-right: 3px;">
+                                <ui:Label text="SurroundSync" display-tooltip-when-elided="true" tooltip="Include SurroundSyncs" style="margin-right: -1px;" />
+                                <ui:Toggle name="ToggleSS" value="true" tooltip="Include SurroundSyncs" style="margin-top: 1px; margin-left: 1px; margin-right: 1px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="ToggleCombo" style="flex-direction: row; margin-right: 5px;">
+                                <ui:Label text="SyncLink" display-tooltip-when-elided="true" tooltip="Include SyncLinks" style="margin-right: -1px;" />
+                                <ui:Toggle name="ToggleSL" value="true" tooltip="Include SyncLinks" style="margin-top: 1px; margin-left: 1px; margin-right: 1px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="ToggleCombo" style="flex-direction: row; display: none;">
+                                <ui:Label text="MA" display-tooltip-when-elided="true" tooltip="Include MessAnchors" style="margin-right: -1px; margin-left: 0;" />
+                                <ui:Toggle name="ToggleMM" value="true" tooltip="Include MessAnchors" style="margin-top: 1px; margin-left: 1px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="MaskFieldCombo" tooltip="Exclude these Classifications from Syncs &amp; SyncLink parent-Syncs" style="flex-direction: row; height: auto; margin-top: 3px; margin-bottom: 4px;">
+                            <ui:Label text="Exclude" display-tooltip-when-elided="true" style="margin-top: 5px;" />
+                            <uie:MaskField choices="System.Collections.Generic.List`1[System.String]" name="ExcludeMaskField" style="flex-grow: 1; height: 20px; margin-top: 2px; width: auto; margin-right: 13px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ListRoot" style="width: 95%; height: 92%; margin-left: -2px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="width: 50%;">
+                    <ui:VisualElement name="RestSection" style="width: 52%; margin-left: 6px;">
+                        <ui:VisualElement name="WallSegmentSliders">
+                            <ui:Label text="Wall Index Amounts" display-tooltip-when-elided="true" tooltip="Change the Surrounder index amount per wall face" style="font-size: 13px; -unity-font-style: bold; margin-bottom: 2px;" />
+                            <ui:VisualElement name="SliderCombo" style="flex-direction: row; display: none;">
+                                <ui:Label text="# All     " display-tooltip-when-elided="true" name="LabelAll" style="margin-top: 2px;" />
+                                <ui:SliderInt picking-mode="Ignore" value="10" high-value="30" low-value="1" show-input-field="true" name="SliderAll" direction="Horizontal" style="white-space: normal; align-items: stretch; justify-content: flex-start; flex-wrap: nowrap; width: 140px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="SliderCombo" style="flex-direction: row;">
+                                <ui:Label text="# WPs All" display-tooltip-when-elided="true" name="LabelOne" tooltip="Change the Surrounder index amount per wall face" style="margin-top: 2px;" />
+                                <ui:SliderInt picking-mode="Ignore" value="10" high-value="30" low-value="1" show-input-field="true" name="SliderOne" direction="Horizontal" tooltip="Change the Surrounder index amount per wall face" style="white-space: normal; align-items: stretch; justify-content: flex-start; flex-wrap: nowrap; width: 140px; height: 21px; margin-left: 4px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="SliderCombo" style="flex-direction: row;">
+                                <ui:Label text="# WPs All" display-tooltip-when-elided="true" name="LabelTwo" tooltip="Change the Surrounder index amount per wall face" style="margin-top: 2px;" />
+                                <ui:SliderInt picking-mode="Ignore" value="10" high-value="30" low-value="1" show-input-field="true" name="SliderTwo" direction="Horizontal" tooltip="Change the Surrounder index amount per wall face" style="white-space: normal; align-items: stretch; justify-content: flex-start; flex-wrap: nowrap; width: 140px; margin-left: 12px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="SliderCombo" style="flex-direction: row;">
+                                <ui:Label text="# WPs All" display-tooltip-when-elided="true" name="LabelThree" tooltip="Change the Surrounder index amount per wall face" style="margin-top: 2px;" />
+                                <ui:SliderInt picking-mode="Ignore" value="10" high-value="30" low-value="1" show-input-field="true" name="SliderThree" direction="Horizontal" tooltip="Change the Surrounder index amount per wall face" style="white-space: normal; align-items: stretch; justify-content: flex-start; flex-wrap: nowrap; width: 140px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="SliderCombo" style="flex-direction: row;">
+                                <ui:Label text="# WPs All" display-tooltip-when-elided="true" name="LabelFour" tooltip="Change the Surrounder index amount per wall face" style="margin-top: 2px;" />
+                                <ui:SliderInt picking-mode="Ignore" value="10" high-value="30" low-value="1" show-input-field="true" name="SliderFour" direction="Horizontal" tooltip="Change the Surrounder index amount per wall face" style="white-space: normal; align-items: stretch; justify-content: flex-start; flex-wrap: nowrap; width: 140px; margin-left: 8px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement style="display: none;">
+                                <ui:Button text="Activate SyncSetup 1" display-tooltip-when-elided="true" name="ButtonActivateOne" style="width: 180px; margin-top: 2px;" />
+                                <ui:Button text="Activate SyncSetup 2" display-tooltip-when-elided="true" name="ButtonActivateTwo" style="width: 180px; margin-top: 3px;" />
+                                <ui:Button text="Activate SyncSetup 3" display-tooltip-when-elided="true" name="ButtonActivateThree" style="width: 180px; margin-top: 3px;" />
+                                <ui:Label text="Currently Active: " display-tooltip-when-elided="true" name="LabelCurrentlyActive" style="margin-top: 6px; margin-left: 4px; -unity-font-style: bold; display: flex;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="OtherSettings" style="margin-top: 5px;">
+                            <ui:Label text="Floor " display-tooltip-when-elided="true" tooltip="Change the Surrounder index amount per wall face" style="font-size: 13px; -unity-font-style: bold; margin-bottom: 0; display: none;" />
+                            <ui:VisualElement name="MeshCombo" tooltip="Prefab used for floor. Requires one or more MeshFilter components. When no asset is selected, deafult is the Plane mesh from FlexFloor" style="flex-direction: row; margin-top: 4px; margin-left: -2px;">
+                                <ui:Label text="Floor Prefab" display-tooltip-when-elided="true" style="margin-top: 2px; margin-right: 10px;" />
+                                <uie:ObjectField name="FloorMeshPicker" style="width: auto; margin-left: 28px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="MaterialCombo" style="flex-direction: row; margin-top: 4px; margin-left: -2px;">
+                                <ui:Label text="Floor Material" display-tooltip-when-elided="true" tooltip=" Material to apply to the generated floor Mesh" style="margin-top: 2px; margin-right: 10px;" />
+                                <uie:ObjectField name="FloorMaterialPicker1" style="width: auto; margin-left: 20px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="MaterialCombo" style="flex-direction: row; margin-top: 4px; display: none; margin-left: -2px;">
+                                <ui:Label text="Floor Material 2" display-tooltip-when-elided="true" tooltip="Secondary Material that can be added to the floor mesh, in case the assigned mesh has sub meshes" style="margin-top: 2px; margin-right: 10px;" />
+                                <uie:ObjectField name="FloorMaterialPicker2" style="width: auto;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="FloatCombo" tooltip="Height (in Unity units / meters) for the ceiling to spawn at" style="flex-direction: row; margin-top: 2px; margin-left: -2px;">
+                                <ui:Label text="Ceiling  Height" display-tooltip-when-elided="true" style="margin-top: 2px; margin-right: 5px;" />
+                                <uie:FloatField value="42.2" name="CeilingHeightFloatField" style="width: 39px; margin-left: 20px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="MeshCombo" tooltip="Prefab used for ceiling. Requires one or more MeshFilter components. When no asset is selected, deafult is the Plane mesh from FlexFloor" style="flex-direction: row; margin-top: 4px; margin-left: -2px;">
+                                <ui:Label text="Ceiling Mesh" display-tooltip-when-elided="true" style="margin-top: 2px; margin-right: 10px;" />
+                                <uie:ObjectField name="CeilingMeshPicker" style="width: auto; margin-left: 24px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="MaterialCombo" style="flex-direction: row; margin-top: 4px;">
+                                <ui:Label text="Ceiling Material" display-tooltip-when-elided="true" tooltip="Material to apply to the generated Mesh" style="margin-top: 2px; margin-left: -2px;" />
+                                <uie:ObjectField name="CeilingMaterialPicker1" style="width: auto; margin-left: 19px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="MaterialCombo" style="flex-direction: row; margin-top: 4px; display: none;">
+                                <ui:Label text="Ceiling Material 2" display-tooltip-when-elided="true" tooltip="Secondary Material that can be added to the ceiling mesh, in case the assigned mesh has sub meshes" style="margin-top: 2px;" />
+                                <uie:ObjectField name="CeilingMaterialPicker2" style="width: auto; margin-left: 5px;" />
+                            </ui:VisualElement>
+                            <ui:Label text="FloorProxy: 12 components, 14 Child Objects" display-tooltip-when-elided="true" name="FloorProxyLabel" style="margin-top: 4px; display: none;" />
+                            <ui:Label text="FloorProxy: 12 components, 14 Child Objects" display-tooltip-when-elided="true" name="CeilingProxyLabel" style="margin-top: 5px; display: none;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

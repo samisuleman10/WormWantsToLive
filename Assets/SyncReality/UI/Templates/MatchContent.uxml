@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="ToolWindowStyles.uss" />
+    <ui:VisualElement name="root" style="flex-shrink: 0; flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="ChartBar" style="width: 100%; height: 23px; flex-shrink: 0; flex-direction: column;">
+            <ui:VisualElement name="Content" style="flex-direction: row; margin-top: 2px;">
+                <ui:Button text="Create" display-tooltip-when-elided="true" name="CreateButton" style="width: 60px;" />
+                <ui:Button text="Rebuild" display-tooltip-when-elided="true" name="RebuildButton" style="width: 60px;" />
+                <ui:Button text="Debug" display-tooltip-when-elided="true" name="DebugButton" style="width: 60px;" />
+                <ui:VisualElement name="MinimapCombo" style="margin-top: 3px; flex-direction: row; margin-left: 3px;">
+                    <ui:Label text="MiniMap" display-tooltip-when-elided="true" name="MiniMapLabel" />
+                    <ui:Toggle name="MinimapToggle" />
+                </ui:VisualElement>
+                <ui:VisualElement name="BlackboardCombo" style="margin-top: 3px; flex-direction: row; margin-left: 3px;">
+                    <ui:Label text="Blackboard" display-tooltip-when-elided="true" name="BlackboardLabel" />
+                    <ui:Toggle name="BlackboardToggle" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ChartRoot" style="margin-top: 0; align-items: flex-start; flex-direction: column; flex-shrink: 0; flex-grow: 1; width: 100%; height: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

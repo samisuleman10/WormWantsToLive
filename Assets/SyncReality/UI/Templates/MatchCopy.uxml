@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="ToolWindowStyles.uss" />
+    <ui:VisualElement name="root" style="flex-shrink: 1; flex-grow: 0;">
+        <ui:VisualElement name="ColumnRoot" style="margin-top: 0; align-items: flex-start; flex-direction: column;">
+            <ui:VisualElement name="ColumnContainer" style="margin-top: 0; align-items: flex-start; flex-direction: row; flex-shrink: 0; flex-grow: 1;">
+                <ui:VisualElement name="ColumnSL" style="flex-shrink: 0; flex-grow: 1; border-right-width: 1px; border-right-color: rgb(255, 255, 255);">
+                    <ui:VisualElement name="Header" style="align-items: center; flex-grow: 0; flex-shrink: 1;">
+                        <ui:Label text="SyncLayouts" display-tooltip-when-elided="true" class="HeadLabel" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Content" style="flex-shrink: 0; flex-grow: 1; align-items: center; border-right-width: 0; border-right-color: rgb(255, 255, 255);">
+                        <ui:VisualElement name="ListContainer" style="flex-shrink: 0; flex-grow: 1; width: 95%; align-items: stretch; border-left-width: 0; border-right-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ColumnRL" style="flex-shrink: 0; flex-grow: 1; border-right-width: 1px; border-right-color: rgb(255, 255, 255);">
+                    <ui:VisualElement name="Header" style="align-items: center; flex-grow: 0; flex-shrink: 1; border-right-width: 0; border-right-color: rgb(255, 255, 255);">
+                        <ui:Label text="RoomLayouts" display-tooltip-when-elided="true" class="HeadLabel" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Content" style="flex-shrink: 0; flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="ListContainer" style="flex-shrink: 0; flex-grow: 1; width: 95%; align-items: stretch;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ColumnRC" style="flex-shrink: 0; flex-grow: 1; border-right-width: 1px; border-right-color: rgb(255, 255, 255);">
+                    <ui:VisualElement name="Header" style="align-items: center; flex-grow: 0; flex-shrink: 1; border-right-width: 0; border-right-color: rgb(255, 255, 255);">
+                        <ui:Label text="RoomCharts" display-tooltip-when-elided="true" class="HeadLabel" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Content" style="flex-shrink: 0; flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="ListContainer" style="flex-shrink: 0; flex-grow: 1; width: 95%; align-items: stretch;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ColumnSC" style="flex-shrink: 0; flex-grow: 1;">
+                    <ui:VisualElement name="Header" style="align-items: center; flex-grow: 0; flex-shrink: 1; border-right-width: 0; border-right-color: rgb(255, 255, 255);">
+                        <ui:Label text="Scenes" display-tooltip-when-elided="true" class="HeadLabel" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Content" style="flex-shrink: 0; flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="ListContainer" style="flex-shrink: 0; flex-grow: 1; width: 95%; align-items: stretch;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="ColumnBottom" style="flex-shrink: 0; flex-grow: 1; border-top-width: 1px; border-top-color: rgb(255, 255, 255); width: 100%;">
+                <ui:Button text="Delete" display-tooltip-when-elided="true" name="DeleteButton" style="width: 70px; margin-top: 3px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ChartRoot" style="margin-top: 0; align-items: flex-start; flex-direction: column;" />
+    </ui:VisualElement>
+</ui:UXML>

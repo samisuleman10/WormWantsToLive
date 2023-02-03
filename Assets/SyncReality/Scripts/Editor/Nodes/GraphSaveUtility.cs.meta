@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Editor/Grab/SnapSurfaces/BoxGrabSurfaceEditor.cs.meta
+guid: 111084e367a986f4bac3423b21fe7a26
+========
+guid: 503e6a1629638724e8833f35df8e4561
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Scripts/Editor/Nodes/GraphSaveUtility.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

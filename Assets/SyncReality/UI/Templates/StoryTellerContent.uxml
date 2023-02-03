@@ -1,0 +1,50 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root" style="height: auto; margin-bottom: 6px;">
+        <ui:VisualElement name="StoryTellerRoot" style="padding-top: 4px; margin-left: 4px;">
+            <ui:VisualElement style="flex-direction: row; margin-bottom: 4px;">
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/story1.png?fileID=2800000&amp;guid=8e8f24578d2f9944c88356a96a7d464b&amp;type=3#story1&apos;); width: 25px; height: auto;" />
+                <ui:Label text="StoryTeller" display-tooltip-when-elided="true" name="HeadLabel" class="HeadLabel" style="margin-left: 3px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ToggleCombo" tooltip="Default = False. On Runtime, immediately execute the Pipeline. Use this primarily to test generation in Editor Runtime, and make sure to disable it on building (assuming no  custom-built scan loading logic)" style="flex-direction: row; margin-bottom: 2px;">
+                <ui:Label text="Execute Pipeline on Start" display-tooltip-when-elided="true" style="margin-left: 1px; font-size: 13px;" />
+                <ui:Toggle name="OnStartToggle" style="margin-left: 70px; margin-top: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ToggleCombo" tooltip="Default = True. On pressing Run in scanner, disable passthrough to return to whatever skybox / gameobject is set in the Scene" style="flex-direction: row; margin-bottom: 2px;">
+                <ui:Label text="Disable passthrough after scanning" display-tooltip-when-elided="true" style="margin-left: 1px; font-size: 13px;" />
+                <ui:Toggle name="PassthroughToggle" style="margin-left: 6px; margin-top: 2px;" />
+            </ui:VisualElement>
+            <ui:Label text="Label" display-tooltip-when-elided="true" name="StoryObjectLabel" style="margin-left: 1px; font-size: 13px; margin-bottom: 2px; display: none;" />
+            <ui:VisualElement name="PipelineFinishEvent" tooltip="Add custom events here that get invoked by the Pipeline (ModuleManager script) when it finishes executing in runtime. " style="margin-top: 6px; margin-left: 2px; margin-right: 5px;" />
+            <ui:VisualElement name="Hiddens">
+                <ui:Button text="Remove Spawns" display-tooltip-when-elided="true" name="ButtonDeconstruct" style="width: 140px; margin-top: 4px; display: none;" />
+                <ui:Label text="Currently Active: " display-tooltip-when-elided="true" name="LabelCurrentlyActive" style="margin-top: 6px; margin-left: 4px; -unity-font-style: bold; display: none;" />
+                <ui:Button text="Activate SyncSetup 1" display-tooltip-when-elided="true" name="ButtonActivateOne" style="width: 180px; margin-top: 2px; display: none;" />
+                <ui:Button text="Activate SyncSetup 2" display-tooltip-when-elided="true" name="ButtonActivateTwo" style="width: 180px; margin-top: 3px; display: none;" />
+                <ui:Button text="Activate SyncSetup 3" display-tooltip-when-elided="true" name="ButtonActivateThree" style="width: 180px; margin-top: 3px; display: none;" />
+                <ui:Label text="Runtime Debugging:" display-tooltip-when-elided="true" name="LabelRuntime" style="margin-top: 11px; margin-left: 4px; -unity-font-style: bold; display: none;" />
+                <ui:VisualElement name="HiddenButtons" style="display: none;">
+                    <ui:Button text="Deconstruct Spawned Environment" display-tooltip-when-elided="true" name="ButtonDeconstruct" style="width: 80%; margin-top: 5px;" />
+                    <ui:Button text="Switch to Setup 2" display-tooltip-when-elided="true" name="ButtonSwitchTwo" style="width: 80%; margin-top: 5px;" />
+                    <ui:Button text="Add Setup 2" display-tooltip-when-elided="true" name="ButtonAddTwo" style="width: 80%; margin-top: 5px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SyncLayoutSelection" style="display: none;">
+                    <ui:VisualElement name="InputCombo" style="flex-direction: row;">
+                        <ui:Label text="First      " display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; margin-top: 2px;" />
+                        <ui:TextField picking-mode="Ignore" text="..." name="SetupOneTextField" style="width: 140px; margin-left: 5px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="InputCombo" style="flex-direction: row;">
+                        <ui:Label text="Second" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; margin-top: 2px;" />
+                        <ui:TextField picking-mode="Ignore" text="..." name="SetupTwoTextField" style="width: 140px; margin-left: 6px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="InputCombo" style="flex-direction: row;">
+                        <ui:Label text="Third    " display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; margin-top: 2px;" />
+                        <ui:TextField picking-mode="Ignore" text="..." name="SetupThreeTextField" style="width: 140px; margin-left: 7px;" />
+                    </ui:VisualElement>
+                    <ui:Button text="Reload" display-tooltip-when-elided="true" name="ReloadButton" style="width: 140px; margin-left: 12px; margin-top: 6px;" />
+                </ui:VisualElement>
+                <ui:Button text="Spawn in Editor" display-tooltip-when-elided="true" name="ButtonSpawn" style="width: 140px; margin-top: 4px; display: none;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

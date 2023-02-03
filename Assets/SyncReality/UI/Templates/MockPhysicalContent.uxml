@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="MockPhysicalRoot" style="padding-top: 4px;">
+            <ui:Label text="Mock Physical" display-tooltip-when-elided="true" name="NameLabel" style="-unity-font-style: bold; margin-left: 3px; margin-top: 5px;" />
+            <uie:EnumField value="Center" name="ClassificationSelector" focusable="true" binding-path="Classification" tooltip="Set the classification types that this can be matched with" style="width: 70%; margin-left: 5px; margin-top: 7px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

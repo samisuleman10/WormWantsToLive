@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Editor/Grab/SnapSurfaces/CylinderGrabSurfaceEditor.cs.meta
+guid: 69099ed7427360a4ab3734573c188647
+========
+guid: 8ec47319c3ae4124da12f337d3a0d5a7
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Scripts/Editor/Nodes/NodeLinkData.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

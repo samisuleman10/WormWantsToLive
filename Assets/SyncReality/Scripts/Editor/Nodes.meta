@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Platform/Samples/ReportingCallbackSample.meta
+guid: dfee6e1fde6884742a8edab3edc0e2a8
+========
+guid: c28b830ca1fed02479f6e0206920f00e
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Scripts/Editor/Nodes.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

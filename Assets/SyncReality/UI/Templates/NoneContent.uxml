@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="ToolWindowStyles.uss" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="NoneRoot" style="padding-top: 4px; margin-left: 8px; margin-top: 4px;">
+            <ui:Label text="No Special Object Selected" display-tooltip-when-elided="true" name="LabelHeader" class="HeadLabel" style="font-size: 11px;" />
+            <ui:Label text="18 Syncs" display-tooltip-when-elided="true" name="LabelSyncsTotal" class="HeadLabel" style="margin-top: 4px; font-size: 11px; margin-bottom: 1px;" />
+            <ui:Label text="3 Hero, 2 Normal, 4 Clutter" display-tooltip-when-elided="true" name="LabelSyncsQuality" class="HeadLabel" style="margin-top: 0; font-size: 11px; margin-bottom: 1px;" />
+            <ui:Label text="2 Seat, 5 Table, 3 Window" display-tooltip-when-elided="true" name="LabelSyncsClassification" class="HeadLabel" style="font-size: 11px; margin-top: 0; margin-bottom: 1px;" />
+            <ui:Label text="12 Mocks" display-tooltip-when-elided="true" name="LabelMocksTotal" class="HeadLabel" style="margin-top: 10px; font-size: 11px; margin-bottom: 1px;" />
+            <ui:Label text="2 Seat, 5 Table, 3 Window" display-tooltip-when-elided="true" name="LabelMocksClassification" class="HeadLabel" style="font-size: 11px; margin-top: 0; margin-bottom: 1px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

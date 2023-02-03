@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="FloorRoot" style="padding-top: 4px; margin-left: 3px; margin-top: 3px;">
+            <ui:Label text="Layout Area" display-tooltip-when-elided="true" name="LayoutAreaLabel" class="HeadLabel" style="padding-left: 1px; margin-top: 0;" />
+            <ui:VisualElement name="VectorCombo" style="flex-direction: row;">
+                <ui:Label text="Click to Create Rectangle (m): " display-tooltip-when-elided="true" name="CreateRectangleLabel" enable-rich-text="true" tooltip="Delete and respawn LayoutPoints to create a room of these dimensions" style="margin-top: 2px; -unity-font-style: bold; padding-right: 4px;" />
+                <uie:Vector2Field name="CreateShapeVector2" style="flex-grow: 1; margin-right: 38px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ResizeCombo" style="flex-direction: row; padding-top: 3px; display: none;">
+                <ui:Label text="Meters per Unit" display-tooltip-when-elided="true" name="Label" style="padding-top: 2px; padding-right: 6px;" />
+                <uie:FloatField value="1" name="MetersPerUnitFloat" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

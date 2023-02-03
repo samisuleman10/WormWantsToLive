@@ -1,0 +1,86 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="SourceRoot" style="margin-top: 0; align-items: flex-start; flex-direction: row; height: auto;">
+            <ui:VisualElement name="DesignArea" style="width: 50%; margin-top: 3px; margin-left: 10px; justify-content: space-between;">
+                <ui:VisualElement style="align-items: center; width: 96%; margin-bottom: 3px;">
+                    <ui:Label text="DesignArea" display-tooltip-when-elided="true" name="DesignAreaLabel" tooltip="Left click to focus camera (preset can be changed on ToolWindowSettings). Right click to select, then open EditUI" class="HeadLabel" style="margin-bottom: 3px; font-size: 15px; margin-top: 5px; padding-bottom: 0; padding-left: 0;" />
+                </ui:VisualElement>
+                <ui:Button text="Refresh" display-tooltip-when-elided="true" name="ButtonInitialize" tooltip="Redraw and send a pipeline update event" class="ControlButton" style="width: 90%; margin-top: 1px; min-width: auto;" />
+                <ui:VisualElement name="RefreshAndReset" style="flex-direction: row; width: 90%;">
+                    <ui:Button text="Reset" display-tooltip-when-elided="true" name="ButtonReset" tooltip="Clear all Present SyncSetups and redraw" class="ControlButton" style="width: 48%; margin-top: 1px; min-width: auto; display: none;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="NewAndSave" style="flex-direction: row; width: 90%;">
+                    <ui:Button text="New" display-tooltip-when-elided="true" name="ButtonNew" tooltip="Create a new SyncSetup" class="ControlButton" style="width: 49%; margin-top: 1px; min-width: auto;" />
+                    <ui:Button text="Save" display-tooltip-when-elided="true" name="ButtonSave" tooltip="Save selected SyncSetup changes to prefab asset" class="ControlButton" style="width: 48%; margin-top: 1px; min-width: auto;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="NewSetupContent" style="width: 90%; align-items: flex-start; margin-top: 3px; flex-direction: row;">
+                    <ui:TextField picking-mode="Ignore" name="SyncSetupNameField" style="width: 48%;" />
+                    <ui:Button text="Rename" display-tooltip-when-elided="true" name="RenameButton" tooltip="Rename SyncSetup" style="width: 48%; align-items: center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ListContent" style="width: 90%; margin-top: 4px;">
+                    <ui:VisualElement name="ListRoot" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="LayoutArea" style="width: 50%; margin-top: 3px;">
+                <ui:VisualElement style="align-items: center; margin-left: -1px; width: 96%; margin-bottom: 3px;">
+                    <ui:Label text="LayoutArea" display-tooltip-when-elided="true" name="LayoutAreaLabel" tooltip="Left click to focus camera (preset can be changed on ToolWindowSettings). Right click to select, then open EditUI" class="HeadLabel" style="margin-bottom: 3px; font-size: 15px; margin-top: 5px; padding-bottom: 0; padding-left: 0; margin-left: -1px;" />
+                </ui:VisualElement>
+                <ui:Button text="Reset Walls" display-tooltip-when-elided="true" name="ButtonResetWalls" tooltip="Respawn LayoutPoints to default positions" class="ControlButton" style="width: 90%; margin-top: 4px; margin-bottom: 2px;" />
+                <ui:Button text="Clear Mocks" display-tooltip-when-elided="true" name="ButtonResetMocks" tooltip="Delete all mocks in LayoutArea" class="ControlButton" style="width: 90%; margin-top: 1px;" />
+                <ui:VisualElement style="align-items: center;">
+                    <ui:Label text="Room Layout" display-tooltip-when-elided="true" name="RoomHeaderLabel" class="HeadLabel" style="font-size: 12px; margin-bottom: 1px; margin-top: 7px; padding-bottom: 0; margin-right: 18px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="LoadLogicRoom" style="margin-top: 2px;">
+                    <ui:VisualElement name="SaveButtons" style="flex-direction: row; width: 90%; margin-top: 1px;">
+                        <ui:Button text="Save" display-tooltip-when-elided="true" name="ButtonSaveLayout" tooltip="Save LayoutPoints and Mock data to active / autosave file" class="ControlButton" style="width: 45%; margin-top: 0; margin-bottom: 1px; min-width: auto; -unity-text-align: middle-center;" />
+                        <ui:VisualElement style="align-items: flex-end; flex-grow: 1; flex-shrink: 0;">
+                            <ui:Button text="Save as.." display-tooltip-when-elided="true" name="ButtonSaveAsRoom" tooltip="Save LayoutPoints and Mock data to specified file" enable-rich-text="false" class="ControlButton" style="width: 100%; margin-top: 0; margin-bottom: 1px; min-width: auto; margin-right: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="LoadButtons" style="flex-direction: row; width: 90%; margin-top: 1px;">
+                        <ui:Button text="Load.." display-tooltip-when-elided="true" name="ButtonLoadLayout" tooltip="Load RoomLayout from file" class="ControlButton" style="width: 45%; margin-top: 0; margin-bottom: 1px; min-width: auto;" />
+                        <ui:VisualElement style="align-items: flex-end; flex-grow: 1; flex-shrink: 0;">
+                            <ui:Button text="Recent" display-tooltip-when-elided="true" name="ButtonLoadRecent" tooltip="Show recent RoomLayouts, click to load" class="ControlButton" style="width: 100%; margin-top: 0; margin-bottom: 1px; min-width: auto; margin-right: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="RecentLogicRoom" style="display: flex;">
+                    <ui:VisualElement name="RecentListRoom" />
+                    <ui:VisualElement style="align-items: center;">
+                        <ui:Button text="CLOSE" display-tooltip-when-elided="true" name="CloseRecentButtonRoom" style="width: 45%;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="align-items: center;">
+                    <ui:Label text="MockPhysicals" display-tooltip-when-elided="true" name="RoomHeaderLabel" class="HeadLabel" style="font-size: 12px; margin-bottom: 1px; margin-top: 7px; padding-bottom: 0; margin-right: 15px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="MockButtons" style="flex-direction: row; width: 90%; margin-top: 1px;">
+                    <ui:Button text="Procedural" display-tooltip-when-elided="true" name="ButtonGenerate" tooltip="Load RoomLayout from file" class="ControlButton" style="width: 45%; margin-top: 0; margin-bottom: 1px; min-width: auto;" />
+                    <ui:VisualElement style="align-items: flex-end; flex-grow: 1; flex-shrink: 0;">
+                        <ui:Button text="Presets" display-tooltip-when-elided="true" name="ButtonPresets" tooltip="Show recent RoomLayouts, click to load" class="ControlButton" style="width: 100%; margin-top: 0; margin-bottom: 1px; min-width: auto; margin-right: 0;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row; height: 21px; width: 93%; flex-shrink: 0;" />
+                <ui:VisualElement name="GenerateSettings" style="flex-grow: 1; flex-shrink: 0; width: 80%; align-items: center; margin-top: 1px; flex-direction: row; justify-content: center; display: none;">
+                    <uie:MaskField choices="System.Collections.Generic.List`1[System.String]" name="MaskFieldGeneratedClassifications" style="width: 45%; justify-content: flex-start;" />
+                    <ui:Toggle name="LShapeToggle" style="margin-top: 3px; margin-left: 7px;" />
+                    <ui:Label text="Lshape" display-tooltip-when-elided="true" name="Label" style="padding-top: 1px; margin-top: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Spacer" style="height: 22px; display: none;">
+            <ui:Label text="Camera Presets" display-tooltip-when-elided="true" name="CameraPresets" style="-unity-text-align: lower-center; height: 22px;" />
+        </ui:VisualElement>
+        <ui:Button text="Base" display-tooltip-when-elided="true" name="ButtonBase" tooltip="Spawn a base mock in LayoutArea" class="ControlButton" style="width: 30%; margin-top: 2px; min-width: 0; height: 21px; display: none;" />
+        <ui:VisualElement name="SourceRootCamera" style="margin-top: 0; align-items: flex-start; flex-direction: row; height: auto; display: none;">
+            <ui:VisualElement name="DesignArea" style="width: 50%; margin-top: 3px; margin-left: 10px; justify-content: space-between;">
+                <ui:Button text="Focus Design Area" display-tooltip-when-elided="true" name="ButtonCameraDesign" class="ControlButton" style="width: 90%; margin-top: 4px; margin-bottom: 2px;" />
+                <ui:Button text="Save Focus Design Area" display-tooltip-when-elided="true" name="ButtonCameraDesignReset" class="ControlButton" style="width: 90%; margin-top: 4px; margin-bottom: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="LayoutArea" style="width: 50%; margin-top: 3px;">
+                <ui:Button text="Focus Layout Area" display-tooltip-when-elided="true" name="ButtonCameraLayout" class="ControlButton" style="width: 90%; margin-top: 4px; margin-bottom: 2px;" />
+                <ui:Button text="Save Focus Layout Area" display-tooltip-when-elided="true" name="ButtonCameraLayoutReset" class="ControlButton" style="width: 90%; margin-top: 4px; margin-bottom: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

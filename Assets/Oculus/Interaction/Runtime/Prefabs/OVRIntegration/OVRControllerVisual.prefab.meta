@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Runtime/Prefabs/OVRIntegration/OVRControllerVisual.prefab.meta
+guid: 5eac3d02a7ebc7c4b9a0289fde0e0c82
+========
+guid: d80e757bd4deea94d99dfc9b6697e013
+>>>>>>>> origin/feature/experimental-features-position:Assets/Resources/SyncSetups/CabinOutside.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="ListRow" style="justify-content: space-around; height: auto;">
+        <ui:VisualElement name="Row" style="flex-direction: row; align-items: center; flex-shrink: 0; height: 24px; margin-top: 6px;">
+            <ui:VisualElement name="Icon" style="width: 16px; height: 16px; background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/slink30.png?fileID=21300000&amp;guid=c3aee49b4a2209046b145a7ba2d758f1&amp;type=3#slink30&apos;); margin-left: 5px; flex-shrink: 0;" />
+            <ui:Label text="Name" display-tooltip-when-elided="true" name="LinkedName" style="flex-grow: 0; margin-left: 4px; margin-right: 2px; color: rgb(37, 138, 255); font-size: 12px; max-width: 60px; min-width: 60px; -unity-font-style: bold;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

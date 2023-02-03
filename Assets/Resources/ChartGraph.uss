@@ -1,0 +1,16 @@
+
+GridBackground {
+    --grid-background-color: #282828;
+    --line-color: rgba(193,196,192,0.1);
+    --thick-line-color: rgba(193,196,192,0.1);
+    --spacing: 10;
+    
+    
+}
+.port{
+    --port-output-color: #00ff00;
+    --port-type-single-output-color: #00ff00;
+    --port-type-single-color: #00ff00;
+    --port-input-color: #6600cc;
+
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Editor/Grab/SnapSurfaces/BezierGrabSurfaceEditor.cs.meta
+guid: 1ea4893b23a494941b5d8b88e92cfa9b
+========
+guid: 2b718f1780af0134daabacbecf61da79
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Scripts/Editor/Nodes/ChartGraphView.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

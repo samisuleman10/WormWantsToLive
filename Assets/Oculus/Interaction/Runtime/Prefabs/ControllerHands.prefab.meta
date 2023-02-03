@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Runtime/Prefabs/ControllerHands.prefab.meta
+guid: 13488c79ceaed7c4294a1b8e8d48de47
+========
+guid: 28ac64cc484ef954292b6a937480332a
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Prefabs/SyncSetupBackup.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

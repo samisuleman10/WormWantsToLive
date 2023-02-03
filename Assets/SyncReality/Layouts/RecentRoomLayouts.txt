@@ -1,0 +1,1 @@
+new,some_room,new,alpha_room_setup,

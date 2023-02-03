@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="PlayfieldRoot" style="padding-top: 4px;">
+            <ui:VisualElement name="Content">
+                <ui:Label text="Playfield Content" display-tooltip-when-elided="true" name="NameLabel" style="-unity-font-style: bold; font-size: 14px; padding-top: 3px; padding-bottom: 3px; padding-left: 3px; margin-left: 3px;" />
+                <ui:Label text="A Playfield is a custom interaction module that allow events to be mapped to tap, drag and release events. Please use the Inspector to configure these." display-tooltip-when-elided="true" style="margin-left: 4px; margin-top: 3px; margin-right: 1px; white-space: normal; margin-bottom: 4px;" />
+                <ui:Button text="Select Parent" display-tooltip-when-elided="true" name="ParentButton" style="margin-bottom: 4px; width: auto; margin-top: 4px; margin-right: 4px;" />
+                <ui:Button text="Focus Camera" display-tooltip-when-elided="true" name="FocusButton" style="margin-bottom: 4px; width: auto; margin-top: 1px; margin-right: 4px;" />
+                <ui:Button text="Delete Playfield" display-tooltip-when-elided="true" name="DeleteButton" style="width: auto; margin-right: 4px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

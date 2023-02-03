@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="SelectionModeHead" style="align-items: center;">
+            <ui:Label text="SelectionMode: " display-tooltip-when-elided="true" name="SelectionModeLabel" style="-unity-font-style: bold; font-size: 18px; padding-top: 3px; padding-bottom: 3px; padding-left: 3px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="WallPieceRoot" style="padding-top: 4px;">
+            <ui:Label text="WallPiece" display-tooltip-when-elided="true" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

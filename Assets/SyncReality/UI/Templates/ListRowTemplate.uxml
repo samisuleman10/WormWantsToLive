@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="ListRow" style="justify-content: space-around; height: auto;">
+        <ui:VisualElement name="Row" style="flex-direction: row; align-items: center; flex-shrink: 0; height: 24px; margin-top: 6px;">
+            <ui:Label text="Name" display-tooltip-when-elided="true" name="NameLabel" style="flex-grow: 0; margin-left: 3px; margin-right: 2px; color: rgb(226, 226, 226); font-size: 12px; max-width: 60px; min-width: 60px; -unity-font-style: bold; margin-bottom: 4px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

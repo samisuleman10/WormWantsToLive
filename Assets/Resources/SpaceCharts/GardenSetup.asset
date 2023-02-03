@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54fc16c0eefe374191698f3e4fd2f6b, type: 3}
+  m_Name: GardenSetup
+  m_EditorClassIdentifier: 
+  setupNodeData:
+  - NodeGUID: 706300ab-cc0f-4ce1-be44-f378b49c08bd
+    nodeText: Cabin
+    Position: {x: -18, y: -71}
+    priorityValue: 0
+    nodeType: 0
+  - NodeGUID: b2477f74-9585-4fe9-ac26-b4367dd6e40c
+    nodeText: GhostPlane
+    Position: {x: 1015, y: 118}
+    priorityValue: 1
+    nodeType: 1
+  - NodeGUID: 9d823b9b-1e55-4d06-933f-ad08db97c00e
+    nodeText: Shrine
+    Position: {x: 757, y: -47}
+    priorityValue: 1
+    nodeType: 0
+  - NodeGUID: 1127cc1b-74bb-4c47-9306-130e10dd78bd
+    nodeText: Clearing
+    Position: {x: 521, y: -47}
+    priorityValue: 2
+    nodeType: 2
+  - NodeGUID: 67371c0a-0a9f-46ac-943c-c1450df90b20
+    nodeText: GardenBack
+    Position: {x: 257, y: -47}
+    priorityValue: 1
+    nodeType: 0
+  - NodeGUID: 2a6aff13-c35a-4f24-8ae9-533adcafe612
+    nodeText: BallVision
+    Position: {x: 210, y: 129}
+    priorityValue: 1
+    nodeType: 1
+  - NodeGUID: 06b469fa-3c5b-4aad-a3b0-77a66f74e718
+    nodeText: GardenFront
+    Position: {x: 209, y: -220}
+    priorityValue: 2
+    nodeType: 0
+  nodeLinks:
+  - BaseNodeGUID: 706300ab-cc0f-4ce1-be44-f378b49c08bd
+    PortName: CrystalBall
+    TargetNodeGUID: 2a6aff13-c35a-4f24-8ae9-533adcafe612
+    TargetPortName: CrystalBall
+    biDirectional: 0
+  - BaseNodeGUID: 706300ab-cc0f-4ce1-be44-f378b49c08bd
+    PortName: FrontDoor
+    TargetNodeGUID: 06b469fa-3c5b-4aad-a3b0-77a66f74e718
+    TargetPortName: FrontDoor
+    biDirectional: 1
+  - BaseNodeGUID: 706300ab-cc0f-4ce1-be44-f378b49c08bd
+    PortName: BackDoor
+    TargetNodeGUID: 67371c0a-0a9f-46ac-943c-c1450df90b20
+    TargetPortName: BackDoor
+    biDirectional: 0
+  - BaseNodeGUID: 9d823b9b-1e55-4d06-933f-ad08db97c00e
+    PortName: AncestorVision
+    TargetNodeGUID: b2477f74-9585-4fe9-ac26-b4367dd6e40c
+    TargetPortName: AncestorVision
+    biDirectional: 0
+  - BaseNodeGUID: 1127cc1b-74bb-4c47-9306-130e10dd78bd
+    PortName: StoneGate
+    TargetNodeGUID: 9d823b9b-1e55-4d06-933f-ad08db97c00e
+    TargetPortName: StoneGate
+    biDirectional: 0
+  - BaseNodeGUID: 67371c0a-0a9f-46ac-943c-c1450df90b20
+    PortName: Clearing
+    TargetNodeGUID: 1127cc1b-74bb-4c47-9306-130e10dd78bd
+    TargetPortName: Clearing
+    biDirectional: 0
+  exposedProperties: []

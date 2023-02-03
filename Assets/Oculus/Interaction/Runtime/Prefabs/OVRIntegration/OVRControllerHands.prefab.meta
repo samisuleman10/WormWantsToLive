@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Runtime/Prefabs/OVRIntegration/OVRControllerHands.prefab.meta
+guid: 4c0ee7a14e52ba544b89c2f777670cca
+========
+guid: 694e03722b1a7cd46bbff19d87354693
+>>>>>>>> origin/feature/experimental-features-position:Assets/Resources/SyncSetups/CabinInside.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

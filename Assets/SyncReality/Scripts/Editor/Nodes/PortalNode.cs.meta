@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Oculus/Interaction/Editor/Grab/SnapSurfaces/SphereGrabSurfaceEditor.cs.meta
+guid: 4dfb1c17387029445b6b67d8a02a48c5
+========
+guid: 69550deba1779c9459e9325a6e182fb2
+>>>>>>>> origin/feature/experimental-features-position:Assets/SyncReality/Scripts/Editor/Nodes/PortalNode.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

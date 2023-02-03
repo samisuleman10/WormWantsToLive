@@ -1,0 +1,145 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="root" style="width: auto; flex-shrink: 0; flex-grow: 0;">
+        <ui:VisualElement name="SyncRoot" style="padding-top: 4px; flex-shrink: 0; flex-grow: 0; flex-direction: row; height: auto; width: auto; justify-content: flex-start;">
+            <ui:VisualElement name="Content" style="height: auto; flex-shrink: 0; flex-grow: 0; width: 55%;">
+                <ui:VisualElement name="GeneralContent" style="opacity: 1; display: flex;">
+                    <ui:VisualElement name="HeaderCombo" style="flex-direction: row;">
+                        <ui:VisualElement name="SyncIcon" tooltip="Click to delete this Sync" style="background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/ssync.png?fileID=2800000&amp;guid=cfeb41558bafe424da7ef00cc86e94cb&amp;type=3#ssync&apos;); width: 20px; height: 20px; margin-top: 3px; margin-left: 3px; margin-right: 2px;" />
+                        <ui:Label text="Selected: " display-tooltip-when-elided="true" name="NameLabel" tooltip="Name of selected Sync" class="HeadLabel" style="margin-left: 2px; font-size: 14px; margin-top: 4px; -unity-font-style: bold;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ToggleCombo" tooltip="Make this map to all wall indexes (optionally, for specific faces)" style="flex-direction: row; margin-left: 4px; margin-top: 5px;">
+                        <ui:Label text="Base Piece" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal;" />
+                        <ui:Toggle name="BasePieceToggle" style="margin-left: 59px; margin-top: 3px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="NonBasePieceContent" style="display: flex;">
+                        <ui:VisualElement name="ToggleCombo" tooltip="SurroundSync will only be placed where there are no physical objects in front of it" style="flex-direction: row; margin-left: 4px; margin-top: 5px; margin-bottom: 2px;">
+                            <ui:Label text="Needs Free Space" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="RequireFreeSpaceToggle" style="margin-left: 13px; margin-top: 2px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="EnumCombo" tooltip="Choose the cardinal direciton this will map to" style="margin-left: 4px; flex-direction: row; flex-shrink: 0; flex-grow: 1;">
+                            <ui:Label text="WallFace" display-tooltip-when-elided="true" name="FaceLabel" style="margin-top: 3px; -unity-font-style: normal; font-size: 13px;" />
+                            <uie:EnumField name="FaceSelector" style="width: 87px; margin-left: 31px; flex-grow: 1; margin-top: 2px; flex-shrink: 0; margin-right: 12px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-direction: row; margin-left: 1px; width: 208px;">
+                            <ui:VisualElement name="IntCombo" tooltip="The amount of indexes per WallFace is set through DesignArea. This Index value places the SS at a specific position within that amount" style="margin-left: 0; flex-direction: row; margin-right: 9px; margin-top: 3px; width: 69px;">
+                                <ui:Label text=" Index" display-tooltip-when-elided="true" name="Label" tooltip="Set its index, relative to the WallFace&apos;s specified segment amount" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                                <uie:IntegerField value="-1" name="MappedIndexInt" binding-path="mapToIndex" tooltip="Set its index, relative to the Face&apos;s specified index amount" style="margin-left: 4px; width: 22px; flex-grow: 1; margin-right: 1px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="IntCombo" tooltip="For multiple SSs on the same index, set their offset to determine their order within that index" style="margin-left: 1px; flex-direction: row; margin-right: 9px; margin-top: 3px; width: 68px;">
+                                <ui:Label text="Offset" display-tooltip-when-elided="true" name="Label" tooltip="For multiple SSs on the same index, set their offset to determine their order " style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                                <uie:IntegerField value="-1" name="OrderInt" binding-path="mapToIndex" tooltip="For multiple SSs on the same index, set their offset to determine their order " style="margin-left: 3px; width: 22px; flex-grow: 1;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="IntCombo" tooltip="If two pieces would have the exact same position, the higher priority gets placed first, the next-highest gets placed on the right" style="margin-left: 1px; flex-direction: row; margin-right: 9px; margin-top: 3px; width: 57px;">
+                                <ui:Label text="Prio" display-tooltip-when-elided="true" name="Label" tooltip="Set the relative priority for this SS to spawn in case others overlap" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                                <uie:IntegerField value="-1" name="PriorityInt" binding-path="mapToIndex" tooltip="Set the relative priority for this SS to spawn in case others overlap" style="margin-left: 3px; width: 22px; flex-grow: 1;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="IntCombo" tooltip="Repeat this SS on susbsequent indexes" style="margin-left: 4px; flex-direction: row; margin-right: 9px; margin-top: 3px; width: 87px; display: none;">
+                            <ui:Label text="Repeat" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: bold; margin-top: 2px;" />
+                            <uie:IntegerField value="0" name="RepeatAmountInt" binding-path="repeatForAmount" style="margin-left: 5px; width: 30px; flex-grow: 1;" />
+                        </ui:VisualElement>
+                        <ui:Button text="Refresh" display-tooltip-when-elided="true" name="InitializeButton" tooltip="Respawn the SurroundSync in the correct position" style="padding-right: 9px; width: 95%; margin-top: 3px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="BasePieceContent" style="display: flex;">
+                        <ui:VisualElement name="ToggleCombo" tooltip="In case of multiple BasePiece SSs, randomize instead of alternate their placement" style="flex-direction: row; margin-left: 4px; margin-top: 2px;">
+                            <ui:Label text="Randomize" display-tooltip-when-elided="true" name="LabelRandomize" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="ToggleRandomize" style="margin-left: 4px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Map to all North face indexes" style="flex-direction: row; margin-left: 4px; margin-top: 2px;">
+                            <ui:Label text="North" display-tooltip-when-elided="true" name="LabelFace1" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="ToggleFace1" style="margin-left: 38px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Map to all East face indexes" style="flex-direction: row; margin-left: 4px; margin-top: 2px;">
+                            <ui:Label text="East   " display-tooltip-when-elided="true" name="LabelFace2" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="ToggleFace2" style="margin-left: 46px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Map to all South face indexes" style="flex-direction: row; margin-left: 4px; margin-top: 2px;">
+                            <ui:Label text="South" display-tooltip-when-elided="true" name="LabelFace3" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="ToggleFace3" style="margin-left: 37px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Map to all West face indexes" style="flex-direction: row; margin-left: 4px; margin-top: 2px;">
+                            <ui:Label text="West " display-tooltip-when-elided="true" name="LabelFace4" style="font-size: 13px; -unity-font-style: normal;" />
+                            <ui:Toggle name="ToggleFace4" style="margin-left: 41px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Button text="Recombine Mesh Bounds" display-tooltip-when-elided="true" name="RecombineButton" tooltip="Add a PlayField " style="margin-top: 3px; margin-right: 3px; padding-right: 9px; width: 95%;" />
+                    <ui:Button text="+ PF" display-tooltip-when-elided="true" name="PlayFieldButton" tooltip="Add a PlayField " style="margin-top: 3px; margin-right: 3px; padding-right: 9px; width: 95%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SyncLinkContent" style="opacity: 1; display: flex;">
+                    <ui:VisualElement name="HeaderCombo" style="flex-direction: row; margin-left: 4px;">
+                        <ui:VisualElement name="Icon" tooltip="Click to delete this SyncLink" style="height: 16px; width: 16px; background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/slink30.png?fileID=21300000&amp;guid=c3aee49b4a2209046b145a7ba2d758f1&amp;type=3#slink30&apos;); margin-top: 6px; flex-shrink: 0;" />
+                        <ui:Label text="LinkName" display-tooltip-when-elided="true" name="LinkNameLabel1" binding-path="linkedObject.name" tooltip="Parent Object" class="HeadLabel" style="margin-left: 2px; flex-shrink: 1; -unity-font-style: bold; font-size: 12px; margin-top: 3px;" />
+                        <ui:Label text="LinkName" display-tooltip-when-elided="true" name="LinkNameLabel2" binding-path="linkedObject.name" tooltip="Passive Object" class="HeadLabel" style="margin-left: 2px; flex-shrink: 1; -unity-font-style: bold; font-size: 12px; margin-top: 3px;" />
+                        <ui:VisualElement name="ButtonHolder" style="flex-direction: row; justify-content: flex-end; flex-shrink: 0; flex-grow: 1;">
+                            <ui:Button text="Close" display-tooltip-when-elided="true" name="SyncLinkCloseButton" style="align-items: flex-end; margin-right: 13px; width: 39px; height: 22px; margin-top: 3px; font-size: 11px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RegularContent">
+                        <ui:VisualElement name="ToggleCombo" tooltip="Parent object spawns on top of passive object" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="On Top" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="OnTopToggle" binding-path="topOf" style="margin-left: 45px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Parent object spawns on bottom of passive object" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="On Bottom" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="OnBottomToggle" binding-path="bottomOf" style="margin-left: 25px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="FloatCombo" tooltip="Specify the minimum distance that objects need to be away from each other" class="floatcombo" style="flex-direction: row; margin-left: 4px; margin-right: 9px;">
+                            <ui:Label text="Min Distance" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <uie:FloatField value="0" name="MinDistFloat" binding-path="minDistance" style="flex-grow: 1; margin-left: 11px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="FloatCombo" tooltip="Specify the preferred distance that objects should be away from each other" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Pref Distance" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <uie:FloatField value="0" name="PrefDistFloat" binding-path="preferredDistance" style="flex-grow: 1; margin-left: 8px; flex-direction: row;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="FloatCombo" tooltip="Specify the Max distance that objects can be away from each other" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Max Distance" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <uie:FloatField value="0" name="MaxDistFloat" binding-path="maxDistance" style="flex-grow: 1; margin-left: 7px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Require a relative rotation" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Limit Rotate" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="LimitRotateToggle" binding-path="rotationConstraint" style="margin-left: 18px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToggleCombo" tooltip="Require a relative max rotation" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Outer Rotate" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="OuterRotateToggle" binding-path="rotationOutside" style="margin-left: 13px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="FloatCombo" tooltip="Require a minimum rotation angle" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Min Angle" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <uie:FloatField value="0" name="MinAngleFloat" binding-path="minAngle" style="flex-grow: 1; margin-left: 29px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="FloatCombo" tooltip="Require a maximum rotation angle" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Max Angle" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <uie:FloatField value="0" name="MaxAngleFloat" binding-path="maxAngle" style="flex-grow: 1; margin-left: 26px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VirtualContent">
+                        <ui:Label text="Label" display-tooltip-when-elided="true" name="VirtualInfoLabel" style="margin-left: 4px; font-size: 13px; -unity-font-style: bold; margin-bottom: 3px;" />
+                        <ui:VisualElement name="ToggleCombo" tooltip="Scale virtual sync along with non-virtual or passive object" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="Scale With Sync" display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="ScaleToggle" binding-path="bottomOf" style="margin-left: 24px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ClutterToggleCombo" tooltip="Scale virtual sync along with non-virtual or passive object" style="margin-left: 4px; flex-direction: row; margin-right: 9px;">
+                            <ui:Label text="On Every Clutter " display-tooltip-when-elided="true" name="Label" style="font-size: 13px; -unity-font-style: normal; margin-top: 2px;" />
+                            <ui:Toggle name="EveryClutterToggle" binding-path="bottomOf" style="margin-left: 22px; margin-top: 3px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="Vector3Combo" tooltip="Position anchor for virtual object" style="margin-left: 4px; margin-top: 3px; flex-direction: row;">
+                            <ui:Label text="Anchor" display-tooltip-when-elided="true" name="Label" style="margin-top: 3px; -unity-font-style: normal; font-size: 13px;" />
+                            <uie:Vector3Field name="AnchorVector3Field" style="flex-grow: 1; margin-left: 9px; margin-top: 2px; flex-shrink: 0; width: auto; margin-right: 12px; max-width: none;" />
+                        </ui:VisualElement>
+                        <ui:Button text="Infer Anchor" display-tooltip-when-elided="true" name="InferButton" tooltip="Infer anchor settings from scene placement" style="margin-top: 1px;" />
+                        <ui:VisualElement name="Vector3Combo" tooltip="Add offset to anchor settings" style="margin-left: 4px; margin-top: 4px; flex-direction: row;">
+                            <ui:Label text="Offset  " display-tooltip-when-elided="true" name="Label" style="margin-top: 3px; -unity-font-style: normal; font-size: 13px;" />
+                            <uie:Vector3Field name="OffsetVector3Field" style="flex-grow: 1; margin-left: 15px; margin-top: 2px; flex-shrink: 0; width: auto; margin-right: 12px; max-width: 180px;" />
+                        </ui:VisualElement>
+                        <ui:Button text="Reposition by Offset" display-tooltip-when-elided="true" name="RepositionButton" tooltip="Apply the offset field settings to scene" style="margin-top: 1px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="SyncLinks" style="width: 45%; flex-shrink: 0;">
+                <ui:Label text="SyncLinks" display-tooltip-when-elided="true" name="NameLabel" class="HeadLabel" style="margin-left: 4px; font-size: 14px; -unity-font-style: bold;" />
+                <ui:VisualElement name="SyncLinkListRoot" style="width: auto; flex-shrink: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:ListView focusable="true" />
+</ui:UXML>

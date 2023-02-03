@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="WallNumberRoot" style="padding-top: 4px;">
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Label text="WallNumber" display-tooltip-when-elided="true" name="HeadLabel" class="HeadLabel" style="padding-left: 3px; margin-bottom: 4px;" />
+                <ui:Button text="Make North" display-tooltip-when-elided="true" name="NorthButton" style="width: 85px; margin-top: 5px; display: none;" />
+            </ui:VisualElement>
+            <ui:Label text="Info" display-tooltip-when-elided="true" name="InfoLabel" style="padding-left: 3px; -unity-font-style: bold; display: none;" />
+            <ui:VisualElement name="ToggleCombo" tooltip="Add a background object that anchors to this face" style="flex-direction: row; margin-top: 12px;">
+                <ui:Label text="Anchor Backdrop" display-tooltip-when-elided="true" />
+                <ui:Toggle name="AnchorBackdropToggle" style="margin-left: 12px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BackdropContent">
+                <uie:ObjectField label="Prefab Asset" name="ObjectField" tooltip="Choose the object to spawn" style="width: 90%;" />
+                <ui:VisualElement name="FloatCombo" tooltip="Spawn at distance from WallNumber" style="flex-direction: row;">
+                    <uie:FloatField label="Distance" value="0" name="DistanceFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelDistance" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" tooltip="Rotate relative to WallNumber" style="flex-direction: row;">
+                    <uie:FloatField label="Rotation" value="0" name="RotationFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelRotation" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" tooltip="Move along horizontal axis" style="flex-direction: row;">
+                    <uie:FloatField label="Offset - Horizontal" value="0" name="HorizontalOffsetFloat" style="width: 190px; height: 18px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelHorizontal" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" tooltip="Move along vertical axis" style="flex-direction: row;">
+                    <uie:FloatField label="Offset - Vertical" value="0" name="VerticalOffsetFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelVertical" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Buttons" style="flex-direction: row; width: 99%; justify-content: center; margin-top: 5px;">
+                    <ui:VisualElement name="LeftButtons" style="width: 45%;">
+                        <ui:Button text="Infer Values" display-tooltip-when-elided="true" name="InferButton" tooltip="Update field values from spawned object" />
+                        <ui:Button text="Save Values" display-tooltip-when-elided="true" name="SaveButton" tooltip="Save field values" style="display: flex;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RightButtons" style="width: 45%;">
+                        <ui:Button text="Spawn" display-tooltip-when-elided="true" name="RepositionButton" tooltip="Spawn an example object" />
+                        <ui:Button text="Delete Spawns" display-tooltip-when-elided="true" name="DeleteButton" tooltip="Delete all spawned example objects" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

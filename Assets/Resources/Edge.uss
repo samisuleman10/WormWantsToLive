@@ -1,0 +1,12 @@
+.edge
+{
+    --edge-color: #FF9122;
+    --selected-edge-color: #FF0000;
+    --ghost-edge-color: #FF0000; 
+}
+.edge.enabled
+{
+    --selected-edge-color: #FF9122;
+    --ghost-edge-color:  #FF9122;
+    --edge-color:  #FF9122;
+}

@@ -1,0 +1,67 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/SyncReality/UI/Templates/ToolWindowStyles.uss?fileID=7433441132597879392&amp;guid=73ac8c6888c38ea46826b3c2492d8cad&amp;type=3#ToolWindowStyles" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="CompassRoot" style="padding-top: 4px;">
+            <ui:VisualElement name="HeadContainer" style="flex-direction: row; margin-bottom: 4px;">
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/SyncReality/UI/Icons/compass.png?fileID=2800000&amp;guid=b07aca94b2c11154388082d54799a794&amp;type=3#compass&apos;); width: 25px; height: 25px;" />
+                <ui:Label text="Backdropper" display-tooltip-when-elided="true" name="HeadLabel" class="HeadLabel" style="margin-left: 3px; margin-bottom: 6px; margin-top: 4px;" />
+                <ui:VisualElement style="align-items: flex-end; flex-grow: 1;">
+                    <ui:VisualElement name="NorthSettings" tooltip="Map your North wallface SurroundSyncs to the scanned wall with this property " style="width: 40%; flex-direction: row; margin-right: 23px; margin-top: 7px; display: none;">
+                        <ui:VisualElement name="PropertyCombo" style="flex-direction: column;">
+                            <ui:Label text="North Property" display-tooltip-when-elided="true" tooltip="Map your North wallface SurroundSyncs to the scanned wall with this property " style="margin-top: 2px; -unity-font-style: bold;" />
+                            <uie:EnumField value="0" name="NorthPropertyField" style="height: 18px; width: 120px; margin-left: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="LabelsButtons" style="flex-direction: row; width: -1px;">
+                <ui:VisualElement name="Labels" style="width: 40%;">
+                    <ui:Label text="North:  Order: " display-tooltip-when-elided="true" name="LabelCenter" style="margin-left: 3px; font-size: 13px; -unity-font-style: normal; margin-bottom: 6px; display: none;" />
+                    <ui:Label text="North:  Order: " display-tooltip-when-elided="true" name="LabelWall1" style="margin-left: 3px; font-size: 13px; -unity-font-style: bold; padding-bottom: 1px;" />
+                    <ui:Label text="North:  Order: " display-tooltip-when-elided="true" name="LabelWall2" style="margin-left: 3px; font-size: 13px; -unity-font-style: bold; padding-bottom: 1px;" />
+                    <ui:Label text="North:  Order: " display-tooltip-when-elided="true" name="LabelWall3" style="margin-left: 3px; font-size: 13px; -unity-font-style: bold; padding-bottom: 1px;" />
+                    <ui:Label text="North:  Order: " display-tooltip-when-elided="true" name="LabelWall4" style="margin-left: 3px; font-size: 13px; -unity-font-style: bold; padding-bottom: 1px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Buttons" style="width: 40%; display: none;">
+                    <ui:Button text="Reverse Order" display-tooltip-when-elided="true" name="ButtonReverse" style="width: 90%; margin-top: 3px; display: none;" />
+                    <ui:Button text="Hide Compass" display-tooltip-when-elided="true" name="ButtonHide" style="width: 90%; margin-top: 3px; display: none;" />
+                    <ui:Button text="Clear BD Spawns" display-tooltip-when-elided="true" name="ButtonClearSpawns" style="width: 90%; margin-top: 3px; display: none;" />
+                    <ui:Button text="Redraw" display-tooltip-when-elided="true" name="ButtonRedraw" style="width: 90%; margin-top: 5px; display: none;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="ToggleCombo" style="flex-direction: row; margin-top: 12px;">
+                <ui:Label text="Anchor Central Backdrop" display-tooltip-when-elided="true" tooltip="Add a central backdrop object" style="width: 152px;" />
+                <ui:Toggle name="AnchorBackdropToggle" style="margin-left: 12px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BackdropContent">
+                <uie:ObjectField label="Prefab Asset" name="ObjectField" style="width: 90%;" />
+                <ui:VisualElement name="FloatCombo" style="flex-direction: row;">
+                    <uie:FloatField label="Rotation" value="0" name="RotationFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelRotation" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" style="flex-direction: row;">
+                    <uie:FloatField label="x-Axis" value="0" name="HorizontalOffsetFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelHorizontal" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" style="flex-direction: row;">
+                    <uie:FloatField label="z-Axis" value="0" name="DistanceFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelDistance" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FloatCombo" style="flex-direction: row;">
+                    <uie:FloatField label="Height" value="0" name="VerticalOffsetFloat" style="width: 190px;" />
+                    <ui:Label text="(23)" display-tooltip-when-elided="true" name="LabelVertical" style="margin-top: 4px; font-size: 11px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Buttons" style="flex-direction: row; width: 99%; justify-content: center; margin-top: 5px;">
+                    <ui:VisualElement name="LeftButtons" style="width: 45%;">
+                        <ui:Button text="Infer Values" display-tooltip-when-elided="true" name="InferButton" tooltip="Load values into fields from spawn placement" />
+                        <ui:Button text="Save Values" display-tooltip-when-elided="true" name="SaveButton" tooltip="Save field values " style="display: flex;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RightButtons" style="width: 45%;">
+                        <ui:Button text="Spawn" display-tooltip-when-elided="true" name="RepositionButton" tooltip="Spawn an example object" />
+                        <ui:Button text="Delete Spawns" display-tooltip-when-elided="true" name="DeleteButton" tooltip="Delete all spawned example objects" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
