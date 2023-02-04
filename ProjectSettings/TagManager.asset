@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Marker
+  - RoomLight
+  - OVRSpatialAnchor
+  - SafeArea
+  - ExtraDangerousArea
+  - SemiDangerousArea
   layers:
   - Default
   - TransparentFX
