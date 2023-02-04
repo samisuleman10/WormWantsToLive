@@ -20,15 +20,29 @@ public class BlindsController : MonoBehaviour
     public AudioSource aS;
     public ParticleSystem particles;
 
+    public AudioSource UndergroundMusic;
+    public AudioSource OvergroundMusic;
+
+    public AudioSource MovementAS;
+    public AudioClip movementSound;
+    Vector3 lastSoundPos;
+
+
     private void Start()
     {
         if(transform.position.y > barrierHeight)
         {
             isAbove = true;
+            FogBlendProcess = 1;
+            UndergroundMusic.volume = 0;
+            OvergroundMusic.volume = 1;
         }
         else
         {
             isAbove = false;
+            FogBlendProcess = 0;
+            UndergroundMusic.volume = 1;
+            OvergroundMusic.volume = 0;
         }
 
     }
@@ -57,14 +71,31 @@ public class BlindsController : MonoBehaviour
             if(isAbove)
             {
                 FogBlendProcess += Time.deltaTime*2;
+                if (FogBlendProcess > 1) FogBlendProcess = 1;
                 RenderSettings.fogColor = Color.Lerp(underGroundFog, skyFog , FogBlendProcess);
                 RenderSettings.fogEndDistance = Mathf.Lerp(undergroundFogDistance, overgroundFogDistance, FogBlendProcess);
+                OvergroundMusic.volume = FogBlendProcess;
+                UndergroundMusic.volume = 1 - FogBlendProcess;
             }
             else
             {
                 FogBlendProcess -= Time.deltaTime*2;
+                if (FogBlendProcess < 0) FogBlendProcess = 0;
                 RenderSettings.fogColor = Color.Lerp(underGroundFog, skyFog, FogBlendProcess);
                 RenderSettings.fogEndDistance = Mathf.Lerp(undergroundFogDistance, overgroundFogDistance, FogBlendProcess);
+                OvergroundMusic.volume =  FogBlendProcess;
+                UndergroundMusic.volume = 1- FogBlendProcess;
+            }
+        }
+
+        Debug.Log(FogBlendProcess);
+
+        if (!isAbove)
+        {
+            if(Vector3.Distance(transform.position, lastSoundPos) > .5f)
+            {
+                lastSoundPos = transform.position;
+                MovementAS.PlayOneShot(movementSound);
             }
         }
 
