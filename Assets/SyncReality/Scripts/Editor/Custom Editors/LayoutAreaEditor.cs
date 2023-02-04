@@ -86,7 +86,7 @@ public class LayoutAreaEditor : Editor
             
             if (_layoutArea.drawDistanceLabels)     
                 DrawDistanceLabels();
-            DrawInfoWindow();
+            // DrawInfoWindow();
 
             DrawLayoutPointLines();
          if(_layoutArea.drawLayoutFloor)
