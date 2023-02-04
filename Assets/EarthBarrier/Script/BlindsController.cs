@@ -27,6 +27,7 @@ public class BlindsController : MonoBehaviour
     public AudioClip movementSound;
     Vector3 lastSoundPos;
 
+    public AudioSource Birbs;
 
     private void Start()
     {
@@ -76,6 +77,7 @@ public class BlindsController : MonoBehaviour
                 RenderSettings.fogEndDistance = Mathf.Lerp(undergroundFogDistance, overgroundFogDistance, FogBlendProcess);
                 OvergroundMusic.volume = FogBlendProcess;
                 UndergroundMusic.volume = 1 - FogBlendProcess;
+                Birbs.volume = FogBlendProcess;
             }
             else
             {
@@ -85,6 +87,7 @@ public class BlindsController : MonoBehaviour
                 RenderSettings.fogEndDistance = Mathf.Lerp(undergroundFogDistance, overgroundFogDistance, FogBlendProcess);
                 OvergroundMusic.volume =  FogBlendProcess;
                 UndergroundMusic.volume = 1- FogBlendProcess;
+                Birbs.volume = FogBlendProcess;
             }
         }
 
