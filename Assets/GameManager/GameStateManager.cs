@@ -125,6 +125,7 @@ public class GameStateManager : MonoBehaviour
         Destroy(flowerContainer);
 
         staticEarthBarrier.SetActive(false);
+
     }
 
    

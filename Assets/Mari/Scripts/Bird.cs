@@ -33,7 +33,7 @@ public class Bird : MonoBehaviour
         speed = speed*factor;
     }
 
-    private void StartBird()
+    public void StartBird()
     {
         SetActive(true);
         BirdInFrontOfTheUser.SetActive(false);
@@ -110,6 +110,7 @@ public class Bird : MonoBehaviour
     {
         BirdInFrontOfTheUser.SetActive(false);
         GameStateManager.loseGame();
+        PauseBird();
     }
 
     //GAMEMANAGER LOSE GAME
