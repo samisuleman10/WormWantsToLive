@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1096260450663643274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096260450663643275}
+  - component: {fileID: 1096260450663643272}
+  m_Layer: 0
+  m_Name: FlowerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096260450663643275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096260450663643274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1096260450663643272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096260450663643274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c2c58242a910b4fa2b05a25c274598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPlane: {fileID: 0}
+  evilFlowerCount: 10
+  goodFlowerCount: 10
+  groundheight: 0.5
+  flowerSprites:
+  - {fileID: 7735368654252311748, guid: 5f61d5a0bebbbe74c94353a432d69e78, type: 3}
+  - {fileID: 2501703141449814781, guid: 2283e31300a6a84409d6fdaff9733fac, type: 3}
+  - {fileID: 1572156061560021979, guid: 80f344f7ffea320478b7a7438ef175e9, type: 3}
+  rootSprites:
+  - {fileID: 6954269063038782635, guid: d904f00d403ed5f45a3365405a2d57bf, type: 3}
+  - {fileID: 6402202591824667059, guid: 6434b57107a4c8c4a9f10d9494b7f360, type: 3}
+  - {fileID: 8057460289893210596, guid: 4f73d051fbe85fe4f882ba8245e5d659, type: 3}
+  EvilFlower: {fileID: 1572156061560021979, guid: 992d5cb4833b69a48a6ad5bddca32688, type: 3}
+  FlowerContainer: {fileID: 5705425167642755784, guid: dae516302de9cbe4eba67f293a4e7a6c, type: 3}
