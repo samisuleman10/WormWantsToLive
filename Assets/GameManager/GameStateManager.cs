@@ -9,6 +9,7 @@ public class GameStateManager : MonoBehaviour
     static bool isPlaying = false;
 
 
+    public Bird bird;
     public GameObject winNarrator, loseNarrator;
 
     static GameObject winNarratorInstance;
@@ -80,7 +81,7 @@ public class GameStateManager : MonoBehaviour
         if (!isPlaying)
         {
             isPlaying = true;
-
+            bird.StartBird();
             if (winNarratorInstance != null) Destroy(winNarratorInstance);
             if (loseNarratorInstance != null) Destroy(loseNarratorInstance);
             winNarratorInstance = null;

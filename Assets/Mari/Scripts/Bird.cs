@@ -18,10 +18,11 @@ public class Bird : MonoBehaviour
     private AudioSource attackAudioSource;
 
 
-    private void Start()
+    public void StartBird()
     {
         camera = Camera.main.transform;
         Invoke(nameof(StartBird), 5);//todo in the future start this from StartGame
+        SetActive(true);
     }
 
     public void IncreaseSpeed(float factor)
@@ -29,10 +30,7 @@ public class Bird : MonoBehaviour
         speed = speed*factor;
     }
 
-    private void StartBird()
-    {
-        SetActive(true);
-    }
+   
 
     public void SetActive(bool active)
     {

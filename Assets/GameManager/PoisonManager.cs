@@ -23,7 +23,7 @@ public class PoisonManager : MonoBehaviour
     public static void addPoison()
     {
         poisonCount++;
-        staicPoisonV.SetActive(false);
+        staicPoisonV.SetActive(true);
         if (poisonCount >= 2) GameStateManager.loseGame();
     }
 }
