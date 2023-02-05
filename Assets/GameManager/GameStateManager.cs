@@ -9,14 +9,13 @@ public class GameStateManager : MonoBehaviour
     static bool isPlaying = false;
 
 
-    public GameObject winNarator, loseNarator;
+    public GameObject winNarrator, loseNarrator;
 
-    static GameObject winNaratorInstance;
-    static GameObject loseNaratorInstance;
-    
+    static GameObject winNarratorInstance;
+    static GameObject loseNarratorInstance;
+ 
 
-
-    static public GameObject staticWinNarator, staticLoseNarator;
+    static public GameObject staticWinNarrator, staticLoseNarrator;
 
     public GrassSpawner grass;
     public FlowerSpawner flower;
@@ -30,57 +29,29 @@ public class GameStateManager : MonoBehaviour
     public GameObject UiBlend;
     public AudioSource blendSound;
 
+    private bool _startEnvironmentLoaded = false;
+
     private void Start()
     {
+        StoryTeller.LoadSyncSetup("StartEnvo");
+        
         staticGrass = grass;
         staticFlower = flower;
 
-        winNaratorInstance = winNarator;
-        loseNaratorInstance = loseNarator;
+        winNarratorInstance = winNarrator;
+        loseNarratorInstance = loseNarrator;
     }
-
-
-    public static void startGame()
-    {
-        if (!isPlaying)
-        {
-            isPlaying = true;
-            winNaratorInstance = null;
-            loseNaratorInstance = null;
-
-            grassContainer = staticGrass.spawnGrass();
-            flowerContainer = staticFlower.spawnFlower();
-
-            
-        }
-    }
-
-
-
-
-    public static void winGame()
-    {
-        winNaratorInstance = Instantiate(staticWinNarator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
-        PoisonManager.resetPoison();
-        isPlaying = false;
-        Timer = 10f;
-    }
-
-    public static void loseGame()
-    {
-        loseNaratorInstance = Instantiate(staticLoseNarator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
-        PoisonManager.resetPoison();
-        isPlaying = false;
-        Timer = 10f;
-    }
-
     private void Update()
     {
+        if (_startEnvironmentLoaded == false)
+            return;
+        /*if (Input.GetKeyUp(KeyCode.A))
+            startActualGame();*/
         if (!isPlaying)
         {
             if (Timer <= 0 && Camera.main.transform.position.y <.4f)
             {
-                startGame();
+                startActualGame();
                 enableBlend();
             }
             else
@@ -89,6 +60,44 @@ public class GameStateManager : MonoBehaviour
             }
         }
     }
+
+    public void startOverallGame()
+    {
+        Debug.Log("PIPELINE FINISHED");
+        _startEnvironmentLoaded = true;
+    }
+    public void startActualGame()
+    {
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            winNarratorInstance = null;
+            loseNarratorInstance = null;
+
+            grassContainer = staticGrass.spawnGrass();
+            flowerContainer = staticFlower.spawnFlower();
+        }
+    }
+
+
+
+    public static void winGame()
+    {
+        winNarratorInstance = Instantiate(staticWinNarrator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
+        PoisonManager.resetPoison();
+        isPlaying = false;
+        Timer = 10f;
+    }
+
+    public static void loseGame()
+    {
+        loseNarratorInstance = Instantiate(staticLoseNarrator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
+        PoisonManager.resetPoison();
+        isPlaying = false;
+        Timer = 10f;
+    }
+
+   
 
 
     void enableBlend()
@@ -102,5 +111,16 @@ public class GameStateManager : MonoBehaviour
     void disableBlend()
     {
         UiBlend.SetActive(false);
+    }
+
+    private StoryTeller _storyTeller;
+    private StoryTeller StoryTeller
+    {
+        get
+        {
+            if (_storyTeller == null)
+                _storyTeller = FindObjectOfType<StoryTeller>();
+            return _storyTeller;
+        }
     }
 }
