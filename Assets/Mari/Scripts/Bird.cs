@@ -17,11 +17,15 @@ public class Bird : MonoBehaviour
     [SerializeField]
     private AudioSource attackAudioSource;
 
+    [SerializeField]
+    private GameObject BirdInFrontOfTheUser;
+    [SerializeField]
+    private MeshRenderer mesh;
 
     private void Start()
     {
         camera = Camera.main.transform;
-        Invoke(nameof(StartBird), 5);//todo in the future start this from StartGame
+        //Invoke(nameof(StartBird), 5);//todo in the future start this from StartGame
     }
 
     public void IncreaseSpeed(float factor)
@@ -32,6 +36,14 @@ public class Bird : MonoBehaviour
     private void StartBird()
     {
         SetActive(true);
+        BirdInFrontOfTheUser.SetActive(false);
+        mesh.enabled = true;
+    }
+
+    public void PauseBird()
+    {
+        SetActive(false);
+        mesh.enabled = false;
     }
 
     public void SetActive(bool active)
@@ -41,15 +53,12 @@ public class Bird : MonoBehaviour
             transform.position = initialPostion.transform.position;
     }
 
-    public void PauseBird()
-    {
-        SetActive(false);
-    }
 
     private void Reset()
     {
         transform.position = initialPostion.transform.position;
         _isWormFound = false;
+        BirdInFrontOfTheUser.SetActive(false);
     }
 
     private void Restart()
@@ -89,11 +98,25 @@ public class Bird : MonoBehaviour
             attackAudioSource.Stop();
             if(text!=null)
                 text.text = "Game over";
-            Invoke(nameof(Restart), 5);
+            //Invoke(nameof(Restart), 5);
             SetActive(false);
+            BirdInFrontOfTheUser.SetActive(true);
+            Invoke(nameof(ResetBirdInFrontOfTheUsser), 3);
+
         }// transform.LookAt(target);
     }
+
+    private void ResetBirdInFrontOfTheUsser()
+    {
+        BirdInFrontOfTheUser.SetActive(false);
+        GameStateManager.loseGame();
+    }
+
+    //GAMEMANAGER LOSE GAME
+    //instantiate the sprite in front of the user
 }
+
+
 
 //Invoke(nameof(ForceSetInactive), 20);
 //text.text = "ForceSetActive";
