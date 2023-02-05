@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 3354855434558723598}
   - component: {fileID: 3354855434558723599}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Blend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +347,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354855434901876182}
+  - component: {fileID: 7198430886927162641}
+  - component: {fileID: 7802191511073942967}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -374,6 +376,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &7198430886927162641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354855434901876183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda9cd599ae3dac4982d0fadf4dc911b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 3354855433798815303}
+--- !u!114 &7802191511073942967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354855434901876183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f59bb43d451e8418bf88cfc777b3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poisonVignete: {fileID: 3354855434721076518}
 --- !u!1 &3354855434990704764
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +444,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba9dba314cfbde843ab8d5d320ad6b49, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -520,7 +548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3354855435271429321
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +719,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354855435394045159}
-  - component: {fileID: 3354855435394045158}
   m_Layer: 0
   m_Name: Roots
   m_TagString: Untagged
@@ -715,16 +742,3 @@ Transform:
   m_Father: {fileID: 3354855434901876182}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &3354855435394045158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354855435394045156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda9cd599ae3dac4982d0fadf4dc911b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: {fileID: 3354855433798815303}
