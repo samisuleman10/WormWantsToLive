@@ -89,7 +89,7 @@ public class Bird : MonoBehaviour
             text.text = "Game over";
             Invoke(nameof(Restart), 5);
             SetActive(false);
-        }
+        }// transform.LookAt(target);
     }
 }
 
