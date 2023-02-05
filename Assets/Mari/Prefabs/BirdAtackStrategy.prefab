@@ -52,6 +52,8 @@ MonoBehaviour:
   initialPostion: {fileID: 1692170907044063066}
   text: {fileID: 0}
   attackAudioSource: {fileID: 1126955922}
+  BirdInFrontOfTheUser: {fileID: 0}
+  mesh: {fileID: 1039396810112565017}
 --- !u!54 &1692170905593942816
 Rigidbody:
   m_ObjectHideFlags: 0
