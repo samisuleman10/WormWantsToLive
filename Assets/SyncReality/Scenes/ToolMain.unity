@@ -606,12 +606,24 @@ MonoBehaviour:
   controllerMenuRight: {fileID: 1761129998}
   controllerMenuLeft: {fileID: 56787272}
   controllersInputAdapter: {fileID: 299803944}
-  executeOnStart: 1
+  executeOnStart: 0
   disablePassthroughAfterScanning: 1
   storyObjects: []
   onPipelineFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900509613}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: startOverallGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &151610069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,9 +2698,9 @@ MonoBehaviour:
   iconsPaddingY: 3
   HoverPanelColor: {r: 0.11525454, g: 0.6316465, b: 0.6603774, a: 0.5529412}
   toolWindowBuilt: 1
-  forcePipelineUpdate: 1
-  lastKnownIndex: 1
-  forceUpdateContentSections: 1
+  forcePipelineUpdate: 0
+  lastKnownIndex: 0
+  forceUpdateContentSections: 0
   forceSelectSyncSetupNameField: 0
   forceUpdateControlForSyncLayout: 0
   forceUpdateControlForRoomLayout: 0
