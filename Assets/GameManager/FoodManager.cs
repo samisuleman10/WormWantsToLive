@@ -13,6 +13,7 @@ public class FoodManager : MonoBehaviour
     public static void resetFood()
     {
         foodCount = 0;
+        staticCounter.text =  "0/5";
     }
 
 
