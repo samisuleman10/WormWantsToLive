@@ -3320,6 +3320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039396810112565017, guid: c376495676f2f4ac99a61807ca621809, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1692170905593942817, guid: c376495676f2f4ac99a61807ca621809, type: 3}
       propertyPath: BirdInFrontOfTheUser
       value: 
