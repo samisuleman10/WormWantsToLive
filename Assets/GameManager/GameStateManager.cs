@@ -44,8 +44,11 @@ public class GameStateManager : MonoBehaviour
         staticGrass = grass;
         staticFlower = flower;
 
-        winNarratorInstance = winNarrator;
-        loseNarratorInstance = loseNarrator;
+        staticWinNarrator = winNarrator;
+        staticLoseNarrator = loseNarrator;
+
+
+
 
         staticEarthBarrier = EarthBarrier;
     }
