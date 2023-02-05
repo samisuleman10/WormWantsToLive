@@ -30,6 +30,10 @@ public class GameStateManager : MonoBehaviour
     public GameObject UiBlend;
     public AudioSource blendSound;
 
+
+    public GameObject EarthBarrier;
+    static GameObject staticEarthBarrier;
+
     private bool _startEnvironmentLoaded = false;
 
     private void Start()
@@ -39,6 +43,8 @@ public class GameStateManager : MonoBehaviour
 
         winNarratorInstance = winNarrator;
         loseNarratorInstance = loseNarrator;
+
+        staticEarthBarrier = EarthBarrier;
     }
     private void Update()
     {
@@ -53,7 +59,7 @@ public class GameStateManager : MonoBehaviour
     
         if (!isPlaying)
         {
-            if (Timer <= 0 && Camera.main.transform.position.y <.4f)
+            if (Timer <= 0 && Camera.main.transform.position.y <.5f)
             {
                 startActualGame();
                 enableBlend();
@@ -75,8 +81,13 @@ public class GameStateManager : MonoBehaviour
         if (!isPlaying)
         {
             isPlaying = true;
+
+            if (winNarratorInstance != null) Destroy(winNarratorInstance);
+            if (loseNarratorInstance != null) Destroy(loseNarratorInstance);
             winNarratorInstance = null;
             loseNarratorInstance = null;
+
+            staticEarthBarrier.SetActive(true);
 
             StoryTeller.LoadSyncSetup("RocksInPot");
             
@@ -92,16 +103,28 @@ public class GameStateManager : MonoBehaviour
     {
         winNarratorInstance = Instantiate(staticWinNarrator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
         PoisonManager.resetPoison();
+        FoodManager.resetFood();
         isPlaying = false;
         Timer = 10f;
+
+        Destroy(grassContainer);
+        Destroy(flowerContainer);
+
+        staticEarthBarrier.SetActive(false);
     }
 
     public static void loseGame()
     {
         loseNarratorInstance = Instantiate(staticLoseNarrator, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
         PoisonManager.resetPoison();
+        FoodManager.resetFood();
         isPlaying = false;
         Timer = 10f;
+
+        Destroy(grassContainer);
+        Destroy(flowerContainer);
+
+        staticEarthBarrier.SetActive(false);
     }
 
    
