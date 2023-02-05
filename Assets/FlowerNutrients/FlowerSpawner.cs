@@ -66,9 +66,8 @@ public class FlowerSpawner : MonoBehaviour
                 escapeCount++;
                 pos = new Vector3(Random.Range(-groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x, groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x), groundheight, Random.Range(-groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z, groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z));
 
-                if (Physics.CheckSphere(pos, .12f))
+                if (Physics.CheckSphere(pos, .12f) == false)
                 {
-
                     rot = Quaternion.EulerAngles(0, Random.Range(0, 180), 0);
                     validSpot = true;
                 }

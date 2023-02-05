@@ -42,12 +42,11 @@ public class GameStateManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.A))
+        /*if (Input.GetKeyUp(KeyCode.A))
             StoryTeller.LoadSyncSetup("StartEnvo");
         if (Input.GetKeyUp(KeyCode.B))
-            startActualGame();
-        
-        
+            startActualGame();*/
+
         if (_startEnvironmentLoaded == false)
             return;
     
