@@ -10989,7 +10989,7 @@ MonoBehaviour:
   bird: {fileID: 240561985}
   winNarrator: {fileID: 8304937041275829195, guid: f8b89f09a6c590c44ab4dcf597391201, type: 3}
   loseNarrator: {fileID: 1396716823477840926, guid: 738db5424e8c0db4a800ea7c535b3e17, type: 3}
-  skyBox: {fileID: 0}
+  skyBox: {fileID: 2083860483}
   grass: {fileID: 151610070}
   flower: {fileID: 1423228682}
   UiBlend: {fileID: 625834574}
