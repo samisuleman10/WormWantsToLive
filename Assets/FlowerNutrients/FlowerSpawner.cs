@@ -19,8 +19,10 @@ public class FlowerSpawner : MonoBehaviour
     public GameObject FlowerContainer;
 
     // Start is called before the first frame update
-    void Start()
+    public GameObject spawnFlower()
     {
+        GameObject flowerContainer = new GameObject();
+
         for (int i = 0; i < evilFlowerCount; i++)
         {
             bool validSpot = false;
@@ -39,7 +41,7 @@ public class FlowerSpawner : MonoBehaviour
                 }
             }
 
-            GameObject Container = Instantiate(FlowerContainer, pos, rot);
+            GameObject Container = Instantiate(FlowerContainer, pos, rot, flowerContainer.transform);
             Instantiate(EvilFlower, pos, rot, Container.transform);
             Instantiate(rootSprites[Random.Range(0, rootSprites.Length-1)], pos, rot, Container.transform);
 
@@ -64,11 +66,13 @@ public class FlowerSpawner : MonoBehaviour
                 }
             }
 
-            GameObject Container = Instantiate(FlowerContainer, pos, rot);
+            GameObject Container = Instantiate(FlowerContainer, pos, rot, flowerContainer.transform);
             Instantiate(flowerSprites[Random.Range(0, flowerSprites.Length - 1)], pos, rot, Container.transform);
             Instantiate(rootSprites[Random.Range(0, rootSprites.Length - 1)], pos, rot, Container.transform);
 
             Container.GetComponent<FlowerController>().isPoison = false;
         }
+
+        return flowerContainer;
     }
 }

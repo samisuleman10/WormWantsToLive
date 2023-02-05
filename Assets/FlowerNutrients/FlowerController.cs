@@ -14,7 +14,7 @@ public class FlowerController : MonoBehaviour
 
         if (isPoison)
         {
-            // call game manager here
+            PoisonManager.addPoison();
             aS.Stop();
             aS.PlayOneShot(goodEatingSound);
             badParticles.Play();
@@ -23,7 +23,7 @@ public class FlowerController : MonoBehaviour
         }
         else
         {
-            // call game manager here
+            FoodManager.addFood();
             aS.Stop();
             aS.PlayOneShot(badEatingSound);
             goodParticles.Play();
