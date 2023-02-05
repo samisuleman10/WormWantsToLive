@@ -5849,10 +5849,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 472272473}
     m_Modifications:
-    - target: {fileID: 3354855434558723597, guid: 0a61dafd8e6d64b4e98c64214af0df62, type: 3}
-      propertyPath: m_Name
-      value: Blend
-      objectReference: {fileID: 0}
     - target: {fileID: 3354855434901876182, guid: 0a61dafd8e6d64b4e98c64214af0df62, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5901,9 +5897,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 3354855434990704766, guid: 0a61dafd8e6d64b4e98c64214af0df62, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba9dba314cfbde843ab8d5d320ad6b49, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a61dafd8e6d64b4e98c64214af0df62, type: 3}
