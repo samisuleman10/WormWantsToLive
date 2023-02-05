@@ -745,7 +745,19 @@ MonoBehaviour:
   storyObjects: []
   onPipelineFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900509613}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: startOverallGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &151610069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1477,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419317601}
-  m_LocalRotation: {x: 0, y: 0.98822284, z: 0, w: -0.15302178}
+  m_LocalRotation: {x: 0, y: 0.9826205, z: 0, w: -0.18562588}
   m_LocalPosition: {x: 0, y: 0, z: 23.27665}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
@@ -2945,7 +2957,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675887061}
-  m_LocalRotation: {x: 0, y: 0.9940929, z: 0, w: 0.10853314}
+  m_LocalRotation: {x: 0, y: 0.9965505, z: 0, w: 0.08298851}
   m_LocalPosition: {x: 0, y: 0, z: -0.5678024}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
@@ -3309,7 +3321,7 @@ MonoBehaviour:
   HoverPanelColor: {r: 0.11525454, g: 0.6316465, b: 0.6603774, a: 0.5529412}
   toolWindowBuilt: 1
   forcePipelineUpdate: 0
-  lastKnownIndex: 1
+  lastKnownIndex: 0
   forceUpdateContentSections: 0
   forceSelectSyncSetupNameField: 0
   forceUpdateControlForSyncLayout: 0
@@ -9421,7 +9433,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171552911}
-  m_LocalRotation: {x: 0, y: 0.9611972, z: 0, w: -0.27586234}
+  m_LocalRotation: {x: 0, y: 0.956744, z: 0, w: -0.29093102}
   m_LocalPosition: {x: 0, y: 0, z: -0.5678024}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
@@ -11396,7 +11408,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997217265}
-  m_LocalRotation: {x: 0, y: 0.99728644, z: 0, w: -0.073618725}
+  m_LocalRotation: {x: 0, y: 0.9958256, z: 0, w: -0.091276824}
   m_LocalPosition: {x: 0, y: 0, z: -24.412254}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
@@ -13994,7 +14006,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7615884745788953326}
-  m_LocalRotation: {x: 0, y: 0.99728644, z: 0, w: -0.073618725}
+  m_LocalRotation: {x: 0, y: 0.9958256, z: 0, w: -0.091276824}
   m_LocalPosition: {x: 0, y: 0, z: -24.412254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

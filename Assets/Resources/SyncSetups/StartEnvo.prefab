@@ -63,20 +63,20 @@ MonoBehaviour:
   hasPlayfield: 0
   scan:
     transform: {fileID: 0}
-    ID: SV_MOCK1.2Table
+    ID: SV_MOCK0.5500458Misc
     bounds:
-      m_Center: {x: -80.5617, y: 1.25, z: -10.665115}
-      m_Extent: {x: 0.6000001, y: 0.25, z: 0.40000007}
-    width: 1.2000002
-    widthScaled: 1.4400003
-    height: 0.5
-    heightScaled: 0.25
-    depth: 0.80000013
-    depthScaled: 0.6400001
-    position: {x: -80.5617, y: 1.25, z: -10.665115}
-    scale: {x: 1.2, y: 0.5, z: 0.8}
-    rotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-    classification: 2
+      m_Center: {x: -74.621086, y: 1.4242516, z: -14.81208}
+      m_Extent: {x: 0.27502295, y: 0.42424986, z: 0.4171563}
+    width: 0.5500459
+    widthScaled: 0.45891017
+    height: 0.8484997
+    heightScaled: 0.71995175
+    depth: 0.8343126
+    depthScaled: 0.4589102
+    position: {x: -74.621086, y: 1.4242516, z: -14.81208}
+    scale: {x: 0.8343125, y: 0.8484997, z: 0.55004585}
+    rotation: {x: -0, y: 0.70710677, z: -0, w: -0.7071069}
+    classification: 1
   hasFreeArea: 0
   freeArea:
     serializedVersion: 2
