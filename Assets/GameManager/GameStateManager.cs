@@ -12,6 +12,8 @@ public class GameStateManager : MonoBehaviour
     public Bird bird;
     public GameObject winNarrator, loseNarrator;
 
+    public GameObject skyBox;
+    
     static GameObject winNarratorInstance;
     static GameObject loseNarratorInstance;
  
@@ -75,6 +77,7 @@ public class GameStateManager : MonoBehaviour
     {
         Debug.Log("PIPELINE FINISHED");
         _startEnvironmentLoaded = true;
+        skyBox.SetActive(true);
     }
     public void startActualGame()
     {
