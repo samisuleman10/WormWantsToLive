@@ -40,11 +40,11 @@ public class Bird : MonoBehaviour
         mesh.enabled = true;
     }
 
-    public void PauseBird()
-    {
-        SetActive(false);
-        mesh.enabled = false;
-    }
+    //public void PauseBird()
+    //{
+    //    SetActive(false);
+    //    mesh.enabled = false;
+    //}
 
     public void SetActive(bool active)
     {
@@ -79,13 +79,13 @@ public class Bird : MonoBehaviour
                 attackAudioSource.Play();
             transform.position = Vector3.MoveTowards(transform.position, camera.position, Time.deltaTime * 2 * speed);
         }
-        if(camera.position.y < 1 && camera.position.y > 0.6)
+        if(camera.position.y < 1 && camera.position.y > 0.41f)
         {
             if(!attackAudioSource.isPlaying && !_isWormFound)
                 attackAudioSource.Play();
             transform.position = Vector3.MoveTowards(transform.position, camera.position, Time.deltaTime * speed);
         }
-        if(camera.position.y < 0.6)
+        if(camera.position.y < 0.41f)
         {
             if (attackAudioSource.isPlaying)
                 attackAudioSource.Stop();
@@ -102,6 +102,7 @@ public class Bird : MonoBehaviour
             SetActive(false);
             BirdInFrontOfTheUser.SetActive(true);
             Invoke(nameof(ResetBirdInFrontOfTheUsser), 3);
+            mesh.enabled = false;
 
         }// transform.LookAt(target);
     }
@@ -110,7 +111,7 @@ public class Bird : MonoBehaviour
     {
         BirdInFrontOfTheUser.SetActive(false);
         GameStateManager.loseGame();
-        PauseBird();
+        //PauseBird();
     }
 
     //GAMEMANAGER LOSE GAME
