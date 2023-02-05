@@ -54,7 +54,8 @@ public class Bird : MonoBehaviour
 
     private void Restart()
     {
-        text.text = "Restart";
+        if (text != null)
+            text.text = "Restart";
         Reset();
         SetActive(true);
     }
@@ -86,7 +87,8 @@ public class Bird : MonoBehaviour
         {
             _isWormFound = true;
             attackAudioSource.Stop();
-            text.text = "Game over";
+            if(text!=null)
+                text.text = "Game over";
             Invoke(nameof(Restart), 5);
             SetActive(false);
         }// transform.LookAt(target);
