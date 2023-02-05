@@ -25,6 +25,7 @@ public class GameStateManager : MonoBehaviour
 
     static GameObject grassContainer;
     static GameObject flowerContainer;
+    static GameObject barrierObject;
 
     public GameObject UiBlend;
     public AudioSource blendSound;
@@ -32,9 +33,7 @@ public class GameStateManager : MonoBehaviour
     private bool _startEnvironmentLoaded = false;
 
     private void Start()
-    {
-        StoryTeller.LoadSyncSetup("StartEnvo");
-        
+    { 
         staticGrass = grass;
         staticFlower = flower;
 
@@ -43,10 +42,15 @@ public class GameStateManager : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.A))
+            StoryTeller.LoadSyncSetup("StartEnvo");
+        if (Input.GetKeyUp(KeyCode.B))
+            startActualGame();
+        
+        
         if (_startEnvironmentLoaded == false)
             return;
-        /*if (Input.GetKeyUp(KeyCode.A))
-            startActualGame();*/
+    
         if (!isPlaying)
         {
             if (Timer <= 0 && Camera.main.transform.position.y <.4f)
@@ -74,8 +78,11 @@ public class GameStateManager : MonoBehaviour
             winNarratorInstance = null;
             loseNarratorInstance = null;
 
+            StoryTeller.LoadSyncSetup("RocksInPot");
+            
             grassContainer = staticGrass.spawnGrass();
             flowerContainer = staticFlower.spawnFlower();
+            barrierObject = staticFlower.spawnBarrier();
         }
     }
 

@@ -24,12 +24,14 @@ public class SurrounderModule : ModuleBase<(List<ScanVolume> scans, RoomDimensio
 {
     [FormerlySerializedAs("designStorage")] public DesignAccess designAccess;
     public RoomDimensions roomDimensions;
-    public GameObject groundObject; 
+    public GameObject groundObject;
 
     /// <summary>
     /// Default tile used if no SurrounderSync can be applied
     /// </summary>
-     
+
+    public GrassSpawner grassSpawner;
+    public FlowerSpawner flowerSpawner;
     public SurroundSync defaultTile;
 
     public bool showInfo;
@@ -353,7 +355,10 @@ public class SurrounderModule : ModuleBase<(List<ScanVolume> scans, RoomDimensio
 
             floorMesh = spawnedGroundObject.GetComponent<MeshFilter>().sharedMesh;
             ceilingMesh = spawnedCeilingObject.GetComponent<MeshFilter>().sharedMesh;
-            
+
+
+        //    grassSpawner.groundPlane = spawnedGroundObject.GetComponent<MeshRenderer>();
+         //   flowerSpawner.groundPlane = spawnedGroundObject.GetComponent<MeshRenderer>();
             // multiple meshes - take combined OR mesh in child object 
             // no meshes - warn people
             // previewwindow 
@@ -409,6 +414,7 @@ public class SurrounderModule : ModuleBase<(List<ScanVolume> scans, RoomDimensio
             var o = Instantiate(designAccess.AssembleRuntimeFloor(spawnedGroundObject), center, Quaternion.Euler(0, -Vector3.SignedAngle(groundBox[1] - groundBox[0], Vector3.right, Vector3.up), 0), storyTeller.surroundSyncsParent);
             o.transform.localScale = new Vector3(floorMesh.bounds.size.x, 1, floorMesh.bounds.size.z).invert().ScaleBy(new Vector3((groundBox[1] - groundBox[0]).magnitude, 1, (groundBox[3] - groundBox[0]).magnitude));
             
+            designAccess.spawnedGroundPlane = o;
 
             o = Instantiate(designAccess.AssembleRuntimeCeiling(spawnedCeilingObject), center + Vector3.up * designAccess.GetCeilingHeight(), Quaternion.Euler(180, -Vector3.SignedAngle(groundBox[1] - groundBox[0], Vector3.right, Vector3.up), 0), storyTeller.surroundSyncsParent);
             o.transform.localScale = new Vector3(ceilingMesh.bounds.size.x, 1, ceilingMesh.bounds.size.z).invert().ScaleBy(new Vector3((groundBox[1] - groundBox[0]).magnitude, 1, (groundBox[3] - groundBox[0]).magnitude));
@@ -914,8 +920,11 @@ public class SurrounderModule : ModuleBase<(List<ScanVolume> scans, RoomDimensio
             
             if(Application.isPlaying)
             {
-                if(backdropPrefab != null && backdropPrefab.backdropAsset != null)
+                if (backdropPrefab != null && backdropPrefab.backdropAsset != null)
+                {
+                     
                     Instantiate(backdropPrefab.backdropAsset, matrix.ExtractPosition(), Quaternion.Euler(0,90,0) * matrix.ExtractRotation(), storyTeller.surroundSyncsParent);
+                }
             }
 #if UNITY_EDITOR
             else

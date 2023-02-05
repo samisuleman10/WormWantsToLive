@@ -12,6 +12,7 @@ using Object = UnityEngine.Object;
 [ExecuteInEditMode]
 public class DesignAccess : MonoBehaviour
 {
+    public GameObject spawnedGroundPlane;
     private LayoutArea layoutArea;
     private DesignArea designArea;
     private SyncMaster syncMaster;

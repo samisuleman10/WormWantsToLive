@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FlowerSpawner : MonoBehaviour
 {
-
-
+    public GameObject barrierPrefab;
     public MeshRenderer groundPlane;
 
     public int evilFlowerCount = 10;
@@ -21,6 +20,8 @@ public class FlowerSpawner : MonoBehaviour
     // Start is called before the first frame update
     public GameObject spawnFlower()
     {
+      groundPlane = FindObjectOfType<DesignAccess>().spawnedGroundPlane.GetComponent<MeshRenderer>();
+      Destroy(groundPlane.GetComponent<MeshCollider>());
         GameObject flowerContainer = new GameObject();
 
         for (int i = 0; i < evilFlowerCount; i++)
@@ -29,8 +30,10 @@ public class FlowerSpawner : MonoBehaviour
 
             Vector3 pos = new Vector3();
             Quaternion rot = new Quaternion();
+            int escapeCount = 0;
             while (!validSpot)
             {
+                escapeCount++;
                 pos = new Vector3(Random.Range(-groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x, groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x), groundheight, Random.Range(-groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z, groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z));
 
                 if (Physics.CheckSphere(pos, .12f))
@@ -39,6 +42,9 @@ public class FlowerSpawner : MonoBehaviour
                     rot = Quaternion.EulerAngles(0, Random.Range(0, 180), 0);
                     validSpot = true;
                 }
+
+                if (escapeCount == 100)
+                    break;
             }
 
             GameObject Container = Instantiate(FlowerContainer, pos, rot, flowerContainer.transform);
@@ -54,8 +60,10 @@ public class FlowerSpawner : MonoBehaviour
 
             Vector3 pos = new Vector3();
             Quaternion rot = new Quaternion();
+            int escapeCount = 0;
             while (!validSpot)
             {
+                escapeCount++;
                 pos = new Vector3(Random.Range(-groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x, groundPlane.bounds.size.x / 2 + groundPlane.transform.position.x), groundheight, Random.Range(-groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z, groundPlane.bounds.size.z / 2 + groundPlane.transform.position.z));
 
                 if (Physics.CheckSphere(pos, .12f))
@@ -64,6 +72,8 @@ public class FlowerSpawner : MonoBehaviour
                     rot = Quaternion.EulerAngles(0, Random.Range(0, 180), 0);
                     validSpot = true;
                 }
+                if (escapeCount == 100)
+                    break;
             }
 
             GameObject Container = Instantiate(FlowerContainer, pos, rot, flowerContainer.transform);
@@ -74,5 +84,14 @@ public class FlowerSpawner : MonoBehaviour
         }
 
         return flowerContainer;
+    }
+
+    public GameObject spawnBarrier()
+    {
+        GameObject barrierObj = Instantiate(barrierPrefab, transform); 
+        barrierObj.transform.localScale = groundPlane.transform.localScale * 2;
+        barrierObj.transform.position = groundPlane.transform.position + new Vector3(0,0.5f,0);
+        barrierObj.transform.rotation = groundPlane.transform.rotation;
+        return barrierObj;
     }
 }
